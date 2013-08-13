@@ -6,7 +6,7 @@ Description: A simple, CSS and sprite driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 0.9.2
+Version: 0.9.3
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -46,22 +46,22 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Default widget option values.
 		 */
 		$this->defaults = array(
-			'title'                  => '',
-			'new_window'             => 0,
-			'size'                   => 32,
-			'border_radius'          => 3,
-			'background_color'       => '#999999',
+			'title'					 => '',
+			'new_window'			 => 0,
+			'size'					 => 32,
+			'border_radius'			 => 3,
+			'background_color'		 => '#999999',
 			'background_color_hover' => '#666666',
-			'alignment'              => 'alignleft',
-			'dribbble'               => '',
-			'email'                  => '',
-			'facebook'               => '',
-			'gplus'                  => '',
-			'linkedin'               => '',
-			'pinterest'              => '',
-			'rss'                    => '',
-			'stumbleupon'            => '',
-			'twitter'                => '',
+			'alignment'				 => 'alignleft',
+			'dribbble'				 => '',
+			'email'				 => '',
+			'facebook'				 => '',
+			'gplus'					 => '',
+			'linkedin'				 => '',
+			'pinterest'				 => '',
+			'rss'					 => '',
+			'stumbleupon'				 => '',
+			'twitter'				 => '',
 		);
 
 		/**
@@ -317,8 +317,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		.simple-social-icons .alignleft, .simple-social-icons .alignright {
 			margin: 0; padding: 0;
 		}
-		.simple-social-icons ul li, .sidebar .simple-social-icons ul li, #header .widget-area ul li {
-			background: none; border: none; float: left; list-style-type: none; margin: 0 5px; padding: 0;
+		.simple-social-icons ul li {
+			background: none !important;
+			border: none !important;
+			float: left;
+			list-style-type: none !important;
+			margin: 0 5px !important;
+			padding: 0 !important;
 		}
 		.simple-social-icons ul li a,
 		.simple-social-icons ul li a:hover {
