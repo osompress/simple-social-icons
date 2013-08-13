@@ -2,8 +2,8 @@
 Contributors: nathanrice, studiopress
 Tags: social media, social networking, social profiles
 Requires at least: 3.3
-Tested up to: 3.3.1
-Stable tag: 0.9.4
+Tested up to: 3.5.1
+Stable tag: 0.9.5
 
 This plugin/widget allows you to insert social icons in any widget area.
 
@@ -42,3 +42,6 @@ No, not at this time.
 = 0.9.4 =
 * Added YouTube icon
 * Added bottom margin to icons
+
+= 0.9.5 =
+* Added Instagram icon

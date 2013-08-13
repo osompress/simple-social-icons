@@ -6,7 +6,7 @@ Description: A simple, CSS and sprite driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 0.9.4
+Version: 0.9.5
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -46,23 +46,24 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Default widget option values.
 		 */
 		$this->defaults = array(
-			'title'					 => '',
-			'new_window'			 => 0,
-			'size'					 => 32,
-			'border_radius'			 => 3,
-			'background_color'		 => '#999999',
+			'title'                  => '',
+			'new_window'             => 0,
+			'size'                   => 32,
+			'border_radius'          => 3,
+			'background_color'       => '#999999',
 			'background_color_hover' => '#666666',
-			'alignment'				 => 'alignleft',
-			'dribbble'				 => '',
-			'email'				 => '',
-			'facebook'				 => '',
-			'gplus'					 => '',
-			'linkedin'				 => '',
-			'pinterest'				 => '',
-			'rss'					 => '',
-			'stumbleupon'				 => '',
-			'twitter'				 => '',
-			'youtube'				 => '',
+			'alignment'              => 'alignleft',
+			'dribbble'               => '',
+			'email'                  => '',
+			'facebook'               => '',
+			'gplus'                  => '',
+			'instagram'              => '',
+			'linkedin'               => '',
+			'pinterest'              => '',
+			'rss'                    => '',
+			'stumbleupon'            => '',
+			'twitter'                => '',
+			'youtube'                => '',
 		);
 
 		/**
@@ -108,6 +109,15 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'24' => '-72px 0',
 					'32' => '-96px 0',
 					'48' => '-144px 0',
+				)
+			),
+			'instagram' => array(
+				'label'	  => __( 'Instagram URI', 'ssiw' ),
+				'pattern' => '<li class="social-instagram"><a href="%s" %s>Instagram</a></li>',
+				'background_positions' => array(
+					'24' => '-240px 0',
+					'32' => '-320px 0',
+					'48' => '-480px 0',
 				)
 			),
 			'linkedin' => array(
