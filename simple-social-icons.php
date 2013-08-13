@@ -6,7 +6,7 @@ Description: A simple, CSS and sprite driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 0.9.1
+Version: 0.9.2
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -46,19 +46,22 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Default widget option values.
 		 */
 		$this->defaults = array(
-			'title'					 => '',
-			'new_window'			 => 0,
-			'size'					 => 32,
-			'border_radius'			 => 6,
-			'background_color'		 => '#999999',
+			'title'                  => '',
+			'new_window'             => 0,
+			'size'                   => 32,
+			'border_radius'          => 3,
+			'background_color'       => '#999999',
 			'background_color_hover' => '#666666',
-			'alignment'				 => 'alignleft',
-			'facebook'				 => '',
-			'gplus'					 => '',
-			'linkedin'				 => '',
-			'pinterest'				 => '',
-			'rss'					 => '',
-			'twitter'				 => '',
+			'alignment'              => 'alignleft',
+			'dribbble'               => '',
+			'email'                  => '',
+			'facebook'               => '',
+			'gplus'                  => '',
+			'linkedin'               => '',
+			'pinterest'              => '',
+			'rss'                    => '',
+			'stumbleupon'            => '',
+			'twitter'                => '',
 		);
 
 		/**
@@ -70,58 +73,85 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Social profile choices.
 		 */
 		$this->profiles = array(
-			'facebook' => array(
-				'label'	  => __( 'Facebook URI', 'ssiw' ),
-				'pattern' => '<li class="social-facebook"><a href="%s" %s>Facebook</a></li>',
+			'dribbble' => array(
+				'label'	  => __( 'Dribbble URI', 'ssiw' ),
+				'pattern' => '<li class="social-dribbble"><a href="%s" %s>Dribbble</a></li>',
 				'background_positions' => array(
 					'24' => '0 0',
 					'32' => '0 0',
 					'48' => '0 0',
 				)
 			),
-			'gplus' => array(
-				'label'	  => __( 'Google+ URI', 'ssiw' ),
-				'pattern' => '<li class="social-gplus"><a href="%s" %s>Google+</a></li>',
+			'email' => array(
+				'label'	  => __( 'Email URI', 'ssiw' ),
+				'pattern' => '<li class="social-email"><a href="%s" %s>Email</a></li>',
 				'background_positions' => array(
 					'24' => '-24px 0',
 					'32' => '-32px 0',
 					'48' => '-48px 0',
 				)
 			),
-			'linkedin' => array(
-				'label'	  => __( 'Linkedin URI', 'ssiw' ),
-				'pattern' => '<li class="social-linkedin"><a href="%s" %s>Linkedin</a></li>',
+			'facebook' => array(
+				'label'	  => __( 'Facebook URI', 'ssiw' ),
+				'pattern' => '<li class="social-facebook"><a href="%s" %s>Facebook</a></li>',
 				'background_positions' => array(
 					'24' => '-48px 0',
 					'32' => '-64px 0',
 					'48' => '-96px 0',
 				)
 			),
-			'pinterest' => array(
-				'label'	  => __( 'Pinterest URI', 'ssiw' ),
-				'pattern' => '<li class="social-pinterest"><a href="%s" %s>Pinterest</a></li>',
+			'gplus' => array(
+				'label'	  => __( 'Google+ URI', 'ssiw' ),
+				'pattern' => '<li class="social-gplus"><a href="%s" %s>Google+</a></li>',
 				'background_positions' => array(
 					'24' => '-72px 0',
 					'32' => '-96px 0',
 					'48' => '-144px 0',
 				)
 			),
-			'rss' => array(
-				'label'	  => __( 'RSS URI', 'ssiw' ),
-				'pattern' => '<li class="social-rss"><a href="%s" %s>RSS</a></li>',
+			'linkedin' => array(
+				'label'	  => __( 'Linkedin URI', 'ssiw' ),
+				'pattern' => '<li class="social-linkedin"><a href="%s" %s>Linkedin</a></li>',
 				'background_positions' => array(
 					'24' => '-96px 0',
 					'32' => '-128px 0',
 					'48' => '-192px 0',
 				)
 			),
-			'twitter' => array(
-				'label'	  => __( 'Twitter URI', 'ssiw' ),
-				'pattern' => '<li class="social-twitter"><a href="%s" %s>Twitter</a></li>',
+			'pinterest' => array(
+				'label'	  => __( 'Pinterest URI', 'ssiw' ),
+				'pattern' => '<li class="social-pinterest"><a href="%s" %s>Pinterest</a></li>',
 				'background_positions' => array(
 					'24' => '-120px 0',
 					'32' => '-160px 0',
 					'48' => '-240px 0',
+				)
+			),
+			'rss' => array(
+				'label'	  => __( 'RSS URI', 'ssiw' ),
+				'pattern' => '<li class="social-rss"><a href="%s" %s>RSS</a></li>',
+				'background_positions' => array(
+					'24' => '-144px 0',
+					'32' => '-192px 0',
+					'48' => '-288px 0',
+				)
+			),
+			'stumbleupon' => array(
+				'label'	  => __( 'StumbleUpon URI', 'ssiw' ),
+				'pattern' => '<li class="social-stumbleupon"><a href="%s" %s>StumbleUpon</a></li>',
+				'background_positions' => array(
+					'24' => '-168px 0',
+					'32' => '-224px 0',
+					'48' => '-336px 0',
+				)
+			),
+			'twitter' => array(
+				'label'	  => __( 'Twitter URI', 'ssiw' ),
+				'pattern' => '<li class="social-twitter"><a href="%s" %s>Twitter</a></li>',
+				'background_positions' => array(
+					'24' => '-192px 0',
+					'32' => '-256px 0',
+					'48' => '-384px 0',
 				)
 			),
 		);
@@ -287,7 +317,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		.simple-social-icons .alignleft, .simple-social-icons .alignright {
 			margin: 0; padding: 0;
 		}
-		.simple-social-icons ul li, .sidebar .simple-social-icons ul li {
+		.simple-social-icons ul li, .sidebar .simple-social-icons ul li, #header .widget-area ul li {
 			background: none; border: none; float: left; list-style-type: none; margin: 0 5px; padding: 0;
 		}
 		.simple-social-icons ul li a,

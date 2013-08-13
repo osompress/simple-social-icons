@@ -3,7 +3,7 @@ Contributors: nathanrice, studiopress
 Tags: social media, social networking, social profiles
 Requires at least: 3.3
 Tested up to: 3.3.1
-Stable tag: 0.9.1
+Stable tag: 0.9.2
 
 This plugin/widget allows you to insert social icons in any widget area.
 
@@ -31,3 +31,7 @@ No, not at this time.
 
 = 0.9.1 =
 * Fixed some styling issues
+
+= 0.9.2 =
+* Added new profile options
+* Changed default border radius to 3px
