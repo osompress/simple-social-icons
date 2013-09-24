@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Simple Social Icons
-Plugin URI: http://www.studiopress.com/plugins/simple-social-icons
+Plugin URI: http://wordpress.org/plugins/simple-social-icons/
 Description: A simple, CSS and icon font driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 1.0.2
+Version: 1.0.3
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
