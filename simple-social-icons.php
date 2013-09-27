@@ -299,7 +299,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		.simple-social-icons ul li a,
 		.simple-social-icons ul li a:hover {
 			background-color: ' . $instance['background_color'] . ' !important;
-			-moz-border-radius: ' . $instance['border_radius'] . 'px
+			-moz-border-radius: ' . $instance['border_radius'] . 'px;
 			-webkit-border-radius: ' . $instance['border_radius'] . 'px;
 			border-radius: ' . $instance['border_radius'] . 'px;
 			color: ' . $instance['icon_color'] . ' !important;
