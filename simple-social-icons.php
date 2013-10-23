@@ -6,7 +6,7 @@ Description: A simple, CSS and icon font driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 1.0.5
+Version: 1.0.6
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -265,8 +265,15 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			$profiles = (array) $this->profiles;
 
 			foreach ( $profiles as $profile => $data ) {
-				if ( ! empty( $instance[$profile] ) )
+
+				if ( empty( $instance[ $profile ] ) )
+					continue;
+
+				if ( is_email( $instance[ $profile ] ) )
+					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( $instance[$profile] ), $new_window );
+				else
 					$output .= sprintf( $data['pattern'], esc_url( $instance[$profile] ), $new_window );
+
 			}
 
 			if ( $output )
