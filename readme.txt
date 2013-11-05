@@ -42,6 +42,8 @@ No, not at this time.
 * Vimeo
 * YouTube
 
+NOTE - The rights to each pictogram in the social extention are either trademarked or copyrighted by the respective company. Icons that are included in the social extention can be identified at http://www.entypo.com/.
+
 == Changelog ==
 
 = 0.9.0 =
