@@ -42,7 +42,7 @@ No, not at this time.
 * Vimeo
 * YouTube
 
-NOTE - The rights to each pictogram in the social extention are either trademarked or copyrighted by the respective company. Icons that are included in the social extention can be identified at http://www.entypo.com/.
+NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
 
 == Changelog ==
 
@@ -82,4 +82,4 @@ NOTE - The rights to each pictogram in the social extention are either trademark
 * Updated version in enqueue script function
 
 = 1.0.5 =
-* Updated LICENSE.txt file to include social extention
+* Updated LICENSE.txt file to include social extension
