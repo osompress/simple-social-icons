@@ -1,8 +1,8 @@
 === Plugin Name ===
-Contributors: nathanrice, studiopress
+Contributors: nathanrice, studiopress, bgardner
 Tags: social media, social networking, social profiles
-Requires at least: 3.6
-Tested up to: 3.6.1
+Requires at least: 3.7
+Tested up to: 3.7.1
 Stable tag: 1.0.5
 
 This plugin allows you to insert social icons in any widget area.
