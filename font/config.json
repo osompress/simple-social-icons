@@ -5,6 +5,12 @@
   "hinting": true,
   "glyphs": [
     {
+      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "css": "phone",
+      "code": 59408,
+      "src": "fontawesome"
+    },
+    {
       "uid": "a9862b9d5197886c1ad693ecd7120b31",
       "css": "youtube",
       "code": 59396,
