@@ -57,6 +57,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'alignment'              => 'alignleft',
 			'dribbble'               => '',
 			'email'                  => '',
+			'phone'                  => '',
 			'facebook'               => '',
 			'flickr'                 => '',
 			'github'                 => '',
@@ -83,6 +84,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'email' => array(
 				'label'   => __( 'Email URI', 'ssiw' ),
 				'pattern' => '<li class="social-email"><a href="%s" %s>&#xe80b;</a></li>',
+			),
+			'phone' => array(
+				'label'   => __( 'Phone URI', 'ssiw' ),
+				'pattern' => '<li class="social-phone"><a href="%s" %s>&#xe810;</a></li>',
 			),
 			'facebook' => array(
 				'label'   => __( 'Facebook URI', 'ssiw' ),
