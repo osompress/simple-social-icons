@@ -284,7 +284,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	}
 
 	function enqueue_css() {
-		wp_enqueue_style( 'simple-social-icons-font', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), '1.0.5' );
+		$css_uri = plugin_dir_url( __FILE__ ) . 'css/';
+		wp_enqueue_style( 'simple-social-icons-font', $css_uri . 'font.css', array(), '1.0.0' );
+		wp_enqueue_style( 'simple-social-icons-style', $css_uri . 'style.css', array(), '1.0.6' );
 	}
 
 	/**
