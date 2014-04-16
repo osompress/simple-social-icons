@@ -2,8 +2,8 @@
 Contributors: nathanrice, studiopress, bgardner
 Tags: social media, social networking, social profiles
 Requires at least: 3.7
-Tested up to: 3.7.1
-Stable tag: 1.0.5
+Tested up to: 3.9
+Stable tag: 1.0.6
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -83,3 +83,6 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 = 1.0.5 =
 * Updated LICENSE.txt file to include social extension
+
+= 1.0.6 =
+* Added filters
