@@ -1,3 +1,5 @@
+// Reference: http://wordpress.stackexchange.com/questions/117292/
+
 // Common function to do the trick and our jQuery action
 function color_picker_load() {
     var number = 1 + Math.floor( Math.random() * 5000000 );
