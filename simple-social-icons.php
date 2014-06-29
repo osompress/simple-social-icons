@@ -196,7 +196,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		/** Merge with defaults */
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		?>
-		<style> .wp-color-result {margin: 0 !important;}</style>
+		<style> .wp-color-result {margin: 0 0 -7px 0 !important;}</style>
 		
 		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
 
@@ -380,8 +380,10 @@ add_action( 'admin_enqueue_scripts', 'ssiw_load_color_picker' );
  * Enqueue the color picker script.
  *
  */
-function ssiw_load_color_picker() {
+function ssiw_load_color_picker($hook) {
+	if( 'widgets.php' != $hook )
+        return;
  		wp_enqueue_script('jquery');
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'color-picker', plugin_dir_url( __FILE__ ) .'/js/color-picker.js', array( 'wp-color-picker','jquery' ), false, true );
+		wp_enqueue_script( 'color-picker', plugin_dir_url( __FILE__ ) .'js/color-picker.js', array( 'wp-color-picker','jquery' ), false, true );	
 }
