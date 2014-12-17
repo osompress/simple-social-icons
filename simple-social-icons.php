@@ -6,7 +6,7 @@ Description: A simple, CSS and icon font driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 1.0.6
+Version: 1.0.7
 
 License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -62,7 +62,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'background_color'       => '#999999',
 			'background_color_hover' => '#666666',
 			'alignment'              => 'alignleft',
-			'bloglovin'                => '',
+			'bloglovin'              => '',
 			'dribbble'               => '',
 			'email'                  => '',
 			'facebook'               => '',

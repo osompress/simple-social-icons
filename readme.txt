@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: nathanrice, studiopress, bgardner
 Tags: social media, social networking, social profiles
-Requires at least: 3.7
-Tested up to: 3.9
-Stable tag: 1.0.6
+Requires at least: 4.0
+Tested up to: 4.0
+Stable tag: 1.0.7
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -26,6 +26,7 @@ No, not at this time.
 
 = Which services are included? =
 
+* Bloglovin
 * Dribbble
 * Email
 * Facebook
@@ -86,3 +87,6 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 = 1.0.6 =
 * Added filters
+
+= 1.0.7 =
+* Added Bloglovin icon
