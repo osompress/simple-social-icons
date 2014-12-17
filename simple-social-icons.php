@@ -62,6 +62,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'background_color'       => '#999999',
 			'background_color_hover' => '#666666',
 			'alignment'              => 'alignleft',
+			'bloglovin'                => '',
 			'dribbble'               => '',
 			'email'                  => '',
 			'facebook'               => '',
@@ -83,6 +84,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Social profile glyphs.
 		 */
 		$this->glyphs = apply_filters( 'simple_social_default_glyphs', array(
+			'bloglovin'		=> '&#xe80f;',
 			'dribbble'		=> '&#xe800;',
 			'email'			=> '&#xe80b;',
 			'facebook'		=> '&#xe802;',
@@ -104,6 +106,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Social profile choices.
 		 */
 		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
+			'bloglovin' => array(
+				'label'   => __( 'Bloglovin URI', 'ssiw' ),
+				'pattern' => '<li class="social-bloglovin"><a href="%s" %s>' . $this->glyphs['bloglovin'] . '</a></li>',
+			),
 			'dribbble' => array(
 				'label'   => __( 'Dribbble URI', 'ssiw' ),
 				'pattern' => '<li class="social-dribbble"><a href="%s" %s>' . $this->glyphs['dribbble'] . '</a></li>',

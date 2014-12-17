@@ -53,6 +53,8 @@
 	text-decoration: none !important;
 	text-transform: none !important;
 	width: 1em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .simple-social-icons ul.aligncenter {
