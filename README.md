@@ -1,9 +1,9 @@
 # Simple Social Icons
 
-Contributors: nathanrice, studiopress, bgardner
-Tags: social media, social networking, social profiles
-Requires at least: 4.0
-Tested up to: 4.0  
+Contributors: 
+* [Nathan Rice](https://github.com/nathanrice)
+* [StudioPress](https://github.com/studiopress)
+* [Brian Gardner](https://github.com/bgardner)
 
 ### Description
 
@@ -12,9 +12,9 @@ Simple Social Icons is an easy to use, customizable way to display icons that li
 ### Installation
 
 1. Upload the entire simple-social-icons folder to the /wp-content/plugins/ directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widgetized Area.
-1. Configure the widget by choosing a title, icon size and color, and the URLs to your various social profiles.
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widgetized Area.
+4. Configure the widget by choosing a title, icon size and color, and the URLs to your various social profiles.
 
 ### Frequently Asked Questions
 
