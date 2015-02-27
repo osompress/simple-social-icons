@@ -229,7 +229,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 							_.throttle(setTimeout(function () {
 								$picker.trigger( 'change' );
 							}, 5), 250);
-						}
+						},
+						width: 235,
 					});
 				}
 
