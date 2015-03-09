@@ -57,6 +57,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'new_window'             => 0,
 			'size'                   => 36,
 			'border_radius'          => 3,
+			'border_width'           => 0,
+			'border_color'           => '#ffffff',
+			'border_color_hover'     => '#ffffff',
 			'icon_color'             => '#ffffff',
 			'icon_color_hover'       => '#ffffff',
 			'background_color'       => '#999999',
@@ -189,6 +192,62 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		/** Load CSS in <head> */
 		add_action( 'wp_head', array( $this, 'css' ) );
 
+		/** Load color picker */
+		add_action( 'admin_enqueue_scripts', array( $this, 'load_color_picker' ) );
+		add_action( 'admin_footer-widgets.php', array( $this, 'print_scripts' ), 9999 );
+
+	}
+	
+	/**
+	 * Color Picker.
+	 *
+	 * Enqueue the color picker script.
+	 *
+	 */
+	function load_color_picker( $hook ) {
+		if( 'widgets.php' != $hook )
+			return;
+			wp_enqueue_style( 'wp-color-picker' );
+			wp_enqueue_script( 'wp-color-picker' );
+			wp_enqueue_script( 'underscore' );
+	}
+		
+	/**
+	 * Print scripts.
+	 *
+	 * Reference https://core.trac.wordpress.org/attachment/ticket/25809/color-picker-widget.php
+	 *
+	 */
+	function print_scripts() {
+		?>
+		<script>
+			( function( $ ){				
+				function initColorPicker( widget ) {
+					widget.find( '.ssiw-color-picker' ).wpColorPicker( {
+						change: function ( event ) {
+							var $picker = $( this );
+							_.throttle(setTimeout(function () {
+								$picker.trigger( 'change' );
+							}, 5), 250);
+						},
+						width: 235,
+					});
+				}
+
+				function onFormUpdate( event, widget ) {
+					initColorPicker( widget );
+				}
+
+				$( document ).on( 'widget-added widget-updated', onFormUpdate );
+
+				$( document ).ready( function() {
+					$( '#widgets-right .widget:has(.ssiw-color-picker)' ).each( function () {
+						initColorPicker( $( this ) );
+					} );
+				} );
+			}( jQuery ) );
+		</script>
+		<?php
 	}
 
 	/**
@@ -211,6 +270,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		<p><label for="<?php echo $this->get_field_id( 'border_radius' ); ?>"><?php _e( 'Icon Border Radius:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'border_radius' ); ?>" name="<?php echo $this->get_field_name( 'border_radius' ); ?>" type="text" value="<?php echo esc_attr( $instance['border_radius'] ); ?>" size="3" />px</p>
 
+		<p><label for="<?php echo $this->get_field_id( 'border_width' ); ?>"><?php _e( 'Border Width:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'border_width' ); ?>" name="<?php echo $this->get_field_name( 'border_width' ); ?>" type="text" value="<?php echo esc_attr( $instance['border_width'] ); ?>" size="3" />px</p>
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'alignment' ); ?>"><?php _e( 'Alignment', 'ssiw' ); ?>:</label>
 			<select id="<?php echo $this->get_field_id( 'alignment' ); ?>" name="<?php echo $this->get_field_name( 'alignment' ); ?>">
@@ -222,13 +283,17 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
 
-		<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Icon Font Color:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'icon_color' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="text" value="<?php echo esc_attr( $instance['icon_color'] ); ?>" size="6" /></p>
+		<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Icon Font Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'icon_color' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color'] ); ?>" value="<?php echo esc_attr( $instance['icon_color'] ); ?>" size="6" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Icon Font Hover Color:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'icon_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'icon_color_hover' ); ?>" type="text" value="<?php echo esc_attr( $instance['icon_color_hover'] ); ?>" size="6" /></p>
+		<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Icon Font Hover Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'icon_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'icon_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['icon_color_hover'] ); ?>" size="6" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Background Color:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" type="text" value="<?php echo esc_attr( $instance['background_color'] ); ?>" size="6" /></p>
+		<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Background Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color'] ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" size="6" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Background Hover Color:', 'ssiw' ); ?></label> <input id="<?php echo $this->get_field_id( 'background_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'background_color_hover' ); ?>" type="text" value="<?php echo esc_attr( $instance['background_color_hover'] ); ?>" size="6" /></p>
+		<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Background Hover Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'background_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'background_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['background_color_hover'] ); ?>" size="6" /></p>
+
+		<p><label for="<?php echo $this->get_field_id( 'border_color' ); ?>"><?php _e( 'Border Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'border_color' ); ?>" name="<?php echo $this->get_field_name( 'border_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color'] ); ?>" value="<?php echo esc_attr( $instance['border_color'] ); ?>" size="6" /></p>
+
+		<p><label for="<?php echo $this->get_field_id( 'border_color_hover' ); ?>"><?php _e( 'Border Hover Color:', 'ssiw' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'border_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'border_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['border_color_hover'] ); ?>" size="6" /></p>
 
 		<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
 
@@ -255,6 +320,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 			/** Border radius and Icon size must not be empty, must be a digit */
 			if ( ( 'border_radius' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
+				$newinstance[$key] = 0;
+			}
+
+			if ( ( 'border_width' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
 				$newinstance[$key] = 0;
 			}
 
@@ -345,12 +414,14 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			background-color: ' . $instance['background_color'] . ' !important;
 			border-radius: ' . $instance['border_radius'] . 'px;
 			color: ' . $instance['icon_color'] . ' !important;
+			border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid !important;
 			font-size: ' . $font_size . 'px;
 			padding: ' . $icon_padding . 'px;
 		}
 
 		.simple-social-icons ul li a:hover {
 			background-color: ' . $instance['background_color_hover'] . ' !important;
+			border-color: ' . $instance['border_color_hover'] . ' !important;
 			color: ' . $instance['icon_color_hover'] . ' !important;
 		}';
 
