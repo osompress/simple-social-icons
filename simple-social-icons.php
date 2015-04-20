@@ -402,6 +402,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		/** Pull widget settings, merge with defaults */
 		$all_instances = $this->get_settings();
+		if ( ! isset( $this->number ) || ! isset( $all_instances[$this->number] ) ) {
+			return;
+		}
+
 		$instance = wp_parse_args( $all_instances[$this->number], $this->defaults );
 
 		$font_size = round( (int) $instance['size'] / 2 );
