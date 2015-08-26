@@ -175,16 +175,12 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			),
 		) );
 
-		$widget_ops = array(
-			'classname'   => 'simple-social-icons',
-			'description' => __( 'Displays select social icons.', 'ssiw' ),
+		parent::__construct(
+			'simple-social-icons', // Base ID
+			__( 'Simple Social Icons', 'ssiw' ), // Name
+			array( 'description' => __( 'Displays select social icons.', 'ssiw' ),
+					'classname' => 'simple-social-icons' ) // Args
 		);
-
-		$control_ops = array(
-			'id_base' => 'simple-social-icons',
-		);
-
-		$this->WP_Widget( 'simple-social-icons', __( 'Simple Social Icons', 'ssiw' ), $widget_ops, $control_ops );
 
 		/** Enqueue icon font */
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
@@ -442,7 +438,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			border-color: ' . $border_color_hover . ' !important;
 			color: ' . $icon_color_hover . ' !important;
 		}';
-		
+
 		/** Minify a bit */
 		$css = str_replace( "\t", '', $css );
 		$css = str_replace( array( "\n", "\r" ), ' ', $css );
