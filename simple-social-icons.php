@@ -327,6 +327,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				$newinstance[$key] = 0;
 			}
 
+			/** Accept empty colors */
+			elseif ( strpos( $key, '_color' ) && '' == trim( $value ) ) {
+				$newinstance[$key] = '';
+			}
+
 			/** Validate hex code colors */
 			elseif ( strpos( $key, '_color' ) && 0 == preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
 				$newinstance[$key] = $oldinstance[$key];
@@ -408,6 +413,15 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		$instance = wp_parse_args( $all_instances[$this->number], $this->defaults );
 
+		// treat null values as transparent
+		$icon_color = $instance['icon_color'] ? $instance['icon_color'] : 'transparent';
+		$background_color = $instance['background_color'] ? $instance['background_color'] : 'transparent';
+		$border_color = $instance['border_color'] ? $instance['border_color'] : 'transparent';
+
+		$icon_color_hover = $instance['icon_color_hover'] ? $instance['icon_color_hover'] : 'transparent';
+		$background_color_hover = $instance['background_color_hover'] ? $instance['background_color_hover'] : 'transparent';
+		$border_color_hover = $instance['border_color_hover'] ? $instance['border_color_hover'] : 'transparent';
+
 		$font_size = round( (int) $instance['size'] / 2 );
 		$icon_padding = round ( (int) $font_size / 2 );
 
@@ -415,20 +429,20 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$css = '
 		.simple-social-icons ul li a,
 		.simple-social-icons ul li a:hover {
-			background-color: ' . $instance['background_color'] . ' !important;
+			background-color: ' . $background_color . ' !important;
 			border-radius: ' . $instance['border_radius'] . 'px;
-			color: ' . $instance['icon_color'] . ' !important;
-			border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid !important;
+			color: ' . $icon_color . ' !important;
+			border: ' . $instance['border_width'] . 'px ' . $border_color . ' solid !important;
 			font-size: ' . $font_size . 'px;
 			padding: ' . $icon_padding . 'px;
 		}
 
 		.simple-social-icons ul li a:hover {
-			background-color: ' . $instance['background_color_hover'] . ' !important;
-			border-color: ' . $instance['border_color_hover'] . ' !important;
-			color: ' . $instance['icon_color_hover'] . ' !important;
+			background-color: ' . $background_color_hover . ' !important;
+			border-color: ' . $border_color_hover . ' !important;
+			color: ' . $icon_color_hover . ' !important;
 		}';
-
+		
 		/** Minify a bit */
 		$css = str_replace( "\t", '', $css );
 		$css = str_replace( array( "\n", "\r" ), ' ', $css );
