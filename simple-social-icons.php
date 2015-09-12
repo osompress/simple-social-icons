@@ -87,22 +87,22 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Social profile glyphs.
 		 */
 		$this->glyphs = apply_filters( 'simple_social_default_glyphs', array(
-			'bloglovin'		=> '&#xe80f;',
-			'dribbble'		=> '&#xe800;',
-			'email'			=> '&#xe80b;',
-			'facebook'		=> '&#xe802;',
-			'flickr'		=> '&#xe80a;',
-			'github'		=> '&#xe80c;',
-			'gplus'			=> '&#xe801;',
-			'instagram' 	=> '&#xe809;',
-			'linkedin'		=> '&#xe806;',
-			'pinterest'		=> '&#xe803;',
-			'rss'			=> '&#xe805;',
-			'stumbleupon'	=> '&#xe808;',
-			'tumblr'		=> '&#xe807;',
-			'twitter'		=> '&#xe80d;',
-			'vimeo'			=> '&#xe80e;',
-			'youtube'		=> '&#xe804;',
+			'bloglovin'		=> '&#xe60c;',
+			'dribbble'		=> '&#xe602;',
+			'email'			=> '&#xe60d;',
+			'facebook'		=> '&#xe606;',
+			'flickr'		=> '&#xe609;',
+			'github'		=> '&#xe60a;',
+			'gplus'			=> '&#xe60e;',
+			'instagram' 	=> '&#xe600;',
+			'linkedin'		=> '&#xe603;',
+			'pinterest'		=> '&#xe605;',
+			'rss'			=> '&#xe60b;',
+			'stumbleupon'	=> '&#xe601;',
+			'tumblr'		=> '&#xe604;',
+			'twitter'		=> '&#xe607;',
+			'vimeo'			=> '&#xe608;',
+			'youtube'		=> '&#xe60f;',
 		) );
 
 		/**
