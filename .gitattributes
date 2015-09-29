@@ -1,0 +1,14 @@
+# Default behavior
+* text=auto
+
+# Text files
+*.php text
+*.css text
+*.js text
+*.md text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
