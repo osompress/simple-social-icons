@@ -1,0 +1,37 @@
+{
+  "name": "simple-social-icons",
+  "description": "Development files for the Simple Social Icons plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/copyblogger/simple-social-icons"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^0.8.1",
+    "grunt-checktextdomain": "^0.1.1",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.7.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-csscomb": "~2.0.1",
+    "grunt-jsbeautifier": "^0.2.7",
+    "grunt-jsvalidate": "^0.2.2",
+    "grunt-phplint": "0.0.5",
+    "grunt-styledocco": "^0.1.4",
+    "grunt-wp-i18n": "^0.5.3",
+    "load-grunt-tasks": "^3.3.0"
+  },
+  "plugin": {
+    "name": "Simple Social Icons",
+    "uri": "https://github.com/copyblogger/simple-social-icons",
+    "description": "A simple, CSS and icon font driven social icons widget.",
+    "author": "StudioPress",
+    "authoruri": "http://www.studiopress.com/",
+    "version": "1.0.11",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "textdomain": "simple-social-icons"
+  }
+}
