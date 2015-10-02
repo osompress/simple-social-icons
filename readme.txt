@@ -3,7 +3,7 @@ Contributors: nathanrice, studiopress, bgardner
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -47,52 +47,55 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 == Changelog ==
 
-= 0.9.0 =
-* Initial Beta Release
+= 1.0.10 =
+* Update textdomain, generate POT.
 
-= 0.9.1 =
-* Fixed some styling issues
+= 1.0.9 =
+* PHP7 compatibility
 
-= 0.9.2 =
-* Added new profile options
-* Changed default border radius to 3px
+= 1.0.8 =
+* Added border options
 
-= 0.9.3 =
-* Fixed CSS conflict in some themes
+= 1.0.7 =
+* Added Bloglovin icon
+
+= 1.0.6 =
+* Added filters
+
+= 1.0.5 =
+* Updated LICENSE.txt file to include social extension
+
+= 1.0.4 =
+* Updated version in enqueue script function
+
+= 1.0.3 =
+* Added Tumblr icon
+
+= 1.0.2 =
+* More specific in the CSS to avoid conflicts
+
+= 1.0.1 =
+* Made color and background color more specific in the CSS to avoid conflicts
+
+= 1.0.0 =
+* Switched to icon fonts, rather than images
+
+= 0.9.5 =
+* Added Instagram icon
 
 = 0.9.4 =
 * Added YouTube icon
 * Added bottom margin to icons
 
-= 0.9.5 =
-* Added Instagram icon
+= 0.9.3 =
+* Fixed CSS conflict in some themes
 
-= 1.0.0 =
-* Switched to icon fonts, rather than images
+= 0.9.2 =
+* Added new profile options
+* Changed default border radius to 3px
 
-= 1.0.1 =
-* Made color and background color more specific in the CSS to avoid conflicts
+= 0.9.1 =
+* Fixed some styling issues
 
-= 1.0.2 =
-* More specific in the CSS to avoid conflicts
-
-= 1.0.3 =
-* Added Tumblr icon
-
-= 1.0.4 =
-* Updated version in enqueue script function
-
-= 1.0.5 =
-* Updated LICENSE.txt file to include social extension
-
-= 1.0.6 =
-* Added filters
-
-= 1.0.7 =
-* Added Bloglovin icon
-
-= 1.0.8 =
-* Added border options
-
-= 1.0.9 =
-* PHP7 compatibility
+= 0.9.0 =
+* Initial Beta Release
