@@ -3,7 +3,7 @@ Contributors: nathanrice, studiopress, bgardner
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.3
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -46,6 +46,9 @@ No, not at this time.
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
 
 == Changelog ==
+
+= 1.0.11 =
+* Update enqueue version for stylesheet, for cache busting.
 
 = 1.0.10 =
 * Update textdomain, generate POT.
