@@ -88,3 +88,18 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 1.0.7
 * Added Bloglovin icon
+
+1.0.8
+* Added border options
+
+1.0.9
+* PHP7 compatibility
+
+1.0.10
+* Update textdomain, generate POT
+
+1.0.11
+* Update enqueue version for stylesheet, for cache busting
+
+1.0.12
+* Prevent ModSecurity blocking fonts from loading
