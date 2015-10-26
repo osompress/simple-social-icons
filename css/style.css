@@ -38,7 +38,6 @@
 	font-variant: normal !important;
 	font-weight: normal !important;
 	line-height: 1em;
-	speak: none;
 	text-align: center;
 	text-decoration: none !important;
 	text-transform: none !important;
@@ -54,4 +53,15 @@
 .simple-social-icons ul.aligncenter li {
 	display: inline-block;
 	float: none;
+}
+
+.simple-social-icons .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }

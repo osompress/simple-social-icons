@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: nathanrice, studiopress, bgardner
+Contributors: nathanrice, studiopress, bgardner, shannonsans
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.3.1
@@ -46,6 +46,9 @@ No, not at this time.
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
 
 == Changelog ==
+
+= 1.0.14 =
+* Accessibility improvements: change icon color on focus as well as on hover, add text description for assistive technologies
 
 = 1.0.13 =
 * Add textdomain loader
