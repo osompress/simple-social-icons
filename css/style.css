@@ -55,7 +55,7 @@
 	float: none;
 }
 
-.simple-social-icons .sr-only {
+.simple-social-icons .screen-reader-text {
 	position: absolute;
 	width: 1px;
 	height: 1px;

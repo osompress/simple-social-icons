@@ -122,67 +122,67 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
 			'bloglovin' => array(
 				'label'   => __( 'Bloglovin URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-bloglovin"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['bloglovin'] . '</span><span class="sr-only">' . __( 'Bloglovin', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-bloglovin"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['bloglovin'] . '</span><span class="screen-reader-text">' . __( 'Bloglovin', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'dribbble' => array(
 				'label'   => __( 'Dribbble URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-dribbble"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['dribbble'] . '</span><span class="sr-only">' . __( 'Dribbble', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-dribbble"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['dribbble'] . '</span><span class="screen-reader-text">' . __( 'Dribbble', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'email' => array(
 				'label'   => __( 'Email URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-email"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['email'] . '</span><span class="sr-only">' . __( 'Email', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-email"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['email'] . '</span><span class="screen-reader-text">' . __( 'Email', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'facebook' => array(
 				'label'   => __( 'Facebook URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-facebook"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['facebook'] . '</span><span class="sr-only">' . __( 'Facebook', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-facebook"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['facebook'] . '</span><span class="screen-reader-text">' . __( 'Facebook', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'flickr' => array(
 				'label'   => __( 'Flickr URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-flickr"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['flickr'] . '</span><span class="sr-only">' . __( 'Flickr', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-flickr"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['flickr'] . '</span><span class="screen-reader-text">' . __( 'Flickr', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'github' => array(
 				'label'   => __( 'GitHub URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-github"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['github'] . '</span><span class="sr-only">' . __( 'GitHub', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-github"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['github'] . '</span><span class="screen-reader-text">' . __( 'GitHub', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'gplus' => array(
 				'label'   => __( 'Google+ URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-gplus"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['gplus'] . '</span><span class="sr-only">' . __( 'Google+', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-gplus"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['gplus'] . '</span><span class="screen-reader-text">' . __( 'Google+', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'instagram' => array(
 				'label'   => __( 'Instagram URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-instagram"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['instagram'] . '</span><span class="sr-only">' . __( 'Instagram', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-instagram"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['instagram'] . '</span><span class="screen-reader-text">' . __( 'Instagram', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'linkedin' => array(
 				'label'   => __( 'Linkedin URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-linkedin"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['linkedin'] . '</span><span class="sr-only">' . __( 'Linkedin', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-linkedin"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['linkedin'] . '</span><span class="screen-reader-text">' . __( 'Linkedin', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'pinterest' => array(
 				'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-pinterest"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['pinterest'] . '</span><span class="sr-only">' . __( 'Pinterest', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-pinterest"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['pinterest'] . '</span><span class="screen-reader-text">' . __( 'Pinterest', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'rss' => array(
 				'label'   => __( 'RSS URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-rss"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['rss'] . '</span><span class="sr-only">' . __( 'RSS', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-rss"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['rss'] . '</span><span class="screen-reader-text">' . __( 'RSS', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'stumbleupon' => array(
 				'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-stumbleupon"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['stumbleupon'] . '</span><span class="sr-only">' . __( 'StumbleUpon', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-stumbleupon"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['stumbleupon'] . '</span><span class="screen-reader-text">' . __( 'StumbleUpon', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'tumblr' => array(
 				'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-tumblr"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['tumblr'] . '</span><span class="sr-only">' . __( 'Tumblr', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-tumblr"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['tumblr'] . '</span><span class="screen-reader-text">' . __( 'Tumblr', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'twitter' => array(
 				'label'   => __( 'Twitter URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-twitter"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['twitter'] . '</span><span class="sr-only">' . __( 'Twitter', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-twitter"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['twitter'] . '</span><span class="screen-reader-text">' . __( 'Twitter', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'vimeo' => array(
 				'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-vimeo"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['vimeo'] . '</span><span class="sr-only">' . __( 'Vimeo', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-vimeo"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['vimeo'] . '</span><span class="screen-reader-text">' . __( 'Vimeo', 'simple-social-icons' ) . '</span></a></li>',
 			),
 			'youtube' => array(
 				'label'   => __( 'YouTube URI', 'simple-social-icons' ),
-				'pattern' => '<li class="social-youtube"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['youtube'] . '</span><span class="sr-only">' . __( 'YouTube', 'simple-social-icons' ) . '</span></a></li>',
+				'pattern' => '<li class="social-youtube"><a href="%s" %s><span aria-hidden="true">' . $this->glyphs['youtube'] . '</span><span class="screen-reader-text">' . __( 'YouTube', 'simple-social-icons' ) . '</span></a></li>',
 			),
 		) );
 
