@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 (or later).
 msgid ""
 msgstr ""
-"Project-Id-Version: Simple Social Icons 1.0.9\n"
+"Project-Id-Version: Simple Social Icons 1.0.14\n"
 "Report-Msgid-Bugs-To: StudioPress <translations@studiopress.com>\n"
-"POT-Creation-Date: 2015-09-29 22:00:46+00:00\n"
+"POT-Creation-Date: 2015-10-26 23:48:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,71 +24,135 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes\n"
 
-#: simple-social-icons.php:113
+#: simple-social-icons.php:124
 msgid "Bloglovin URI"
 msgstr ""
 
-#: simple-social-icons.php:117
+#: simple-social-icons.php:125
+msgid "Bloglovin"
+msgstr ""
+
+#: simple-social-icons.php:128
 msgid "Dribbble URI"
 msgstr ""
 
-#: simple-social-icons.php:121
+#: simple-social-icons.php:129
+msgid "Dribbble"
+msgstr ""
+
+#: simple-social-icons.php:132
 msgid "Email URI"
 msgstr ""
 
-#: simple-social-icons.php:125
+#: simple-social-icons.php:133
+msgid "Email"
+msgstr ""
+
+#: simple-social-icons.php:136
 msgid "Facebook URI"
 msgstr ""
 
-#: simple-social-icons.php:129
+#: simple-social-icons.php:137
+msgid "Facebook"
+msgstr ""
+
+#: simple-social-icons.php:140
 msgid "Flickr URI"
 msgstr ""
 
-#: simple-social-icons.php:133
+#: simple-social-icons.php:141
+msgid "Flickr"
+msgstr ""
+
+#: simple-social-icons.php:144
 msgid "GitHub URI"
 msgstr ""
 
-#: simple-social-icons.php:137
+#: simple-social-icons.php:145
+msgid "GitHub"
+msgstr ""
+
+#: simple-social-icons.php:148
 msgid "Google+ URI"
 msgstr ""
 
-#: simple-social-icons.php:141
+#: simple-social-icons.php:149
+msgid "Google+"
+msgstr ""
+
+#: simple-social-icons.php:152
 msgid "Instagram URI"
 msgstr ""
 
-#: simple-social-icons.php:145
+#: simple-social-icons.php:153
+msgid "Instagram"
+msgstr ""
+
+#: simple-social-icons.php:156
 msgid "Linkedin URI"
 msgstr ""
 
-#: simple-social-icons.php:149
+#: simple-social-icons.php:157
+msgid "Linkedin"
+msgstr ""
+
+#: simple-social-icons.php:160
 msgid "Pinterest URI"
 msgstr ""
 
-#: simple-social-icons.php:153
+#: simple-social-icons.php:161
+msgid "Pinterest"
+msgstr ""
+
+#: simple-social-icons.php:164
 msgid "RSS URI"
 msgstr ""
 
-#: simple-social-icons.php:157
+#: simple-social-icons.php:165
+msgid "RSS"
+msgstr ""
+
+#: simple-social-icons.php:168
 msgid "StumbleUpon URI"
 msgstr ""
 
-#: simple-social-icons.php:161
+#: simple-social-icons.php:169
+msgid "StumbleUpon"
+msgstr ""
+
+#: simple-social-icons.php:172
 msgid "Tumblr URI"
 msgstr ""
 
-#: simple-social-icons.php:165
+#: simple-social-icons.php:173
+msgid "Tumblr"
+msgstr ""
+
+#: simple-social-icons.php:176
 msgid "Twitter URI"
 msgstr ""
 
-#: simple-social-icons.php:169
-msgid "Vimeo URI"
-msgstr ""
-
-#: simple-social-icons.php:173
-msgid "YouTube URI"
+#: simple-social-icons.php:177
+msgid "Twitter"
 msgstr ""
 
 #: simple-social-icons.php:180
+msgid "Vimeo URI"
+msgstr ""
+
+#: simple-social-icons.php:181
+msgid "Vimeo"
+msgstr ""
+
+#: simple-social-icons.php:184
+msgid "YouTube URI"
+msgstr ""
+
+#: simple-social-icons.php:185
+msgid "YouTube"
+msgstr ""
+
+#: simple-social-icons.php:191
 msgid "Displays select social icons."
 msgstr ""
 
@@ -96,63 +160,63 @@ msgstr ""
 msgid "Simple Social Icons"
 msgstr ""
 
-#: simple-social-icons.php:265
+#: simple-social-icons.php:276
 msgid "Title:"
 msgstr ""
 
-#: simple-social-icons.php:267
+#: simple-social-icons.php:278
 msgid "Open links in new window?"
 msgstr ""
 
-#: simple-social-icons.php:269
+#: simple-social-icons.php:280
 msgid "Icon Size"
 msgstr ""
 
-#: simple-social-icons.php:271
+#: simple-social-icons.php:282
 msgid "Icon Border Radius:"
 msgstr ""
 
-#: simple-social-icons.php:273
+#: simple-social-icons.php:284
 msgid "Border Width:"
 msgstr ""
 
-#: simple-social-icons.php:276
+#: simple-social-icons.php:287
 msgid "Alignment"
 msgstr ""
 
-#: simple-social-icons.php:278
+#: simple-social-icons.php:289
 msgid "Align Left"
 msgstr ""
 
-#: simple-social-icons.php:279
+#: simple-social-icons.php:290
 msgid "Align Center"
 msgstr ""
 
-#: simple-social-icons.php:280
+#: simple-social-icons.php:291
 msgid "Align Right"
 msgstr ""
 
-#: simple-social-icons.php:286
+#: simple-social-icons.php:297
 msgid "Icon Font Color:"
 msgstr ""
 
-#: simple-social-icons.php:288
+#: simple-social-icons.php:299
 msgid "Icon Font Hover Color:"
 msgstr ""
 
-#: simple-social-icons.php:290
+#: simple-social-icons.php:301
 msgid "Background Color:"
 msgstr ""
 
-#: simple-social-icons.php:292
+#: simple-social-icons.php:303
 msgid "Background Hover Color:"
 msgstr ""
 
-#: simple-social-icons.php:294
+#: simple-social-icons.php:305
 msgid "Border Color:"
 msgstr ""
 
-#: simple-social-icons.php:296
+#: simple-social-icons.php:307
 msgid "Border Hover Color:"
 msgstr ""
 

@@ -4,6 +4,7 @@ Contributors:
 * [Nathan Rice](https://github.com/nathanrice)
 * [StudioPress](https://github.com/studiopress)
 * [Brian Gardner](https://github.com/bgardner)
+* [Shannon Hale](https://github.com/shannonsans)
 
 ### Description
 
@@ -103,3 +104,9 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 1.0.12
 * Prevent ModSecurity blocking fonts from loading
+
+1.0.13
+* Add textdomain loader
+
+1.0.14
+* Accessibility improvements: change icon color on focus as well as on hover, add text description for assistive technologies
