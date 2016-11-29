@@ -2,8 +2,8 @@
 Contributors: nathanrice, studiopress, bgardner, shannonsans, laurenmancke
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0.13
+Tested up to: 4.7
+Stable tag: 1.1.0
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -11,18 +11,24 @@ This plugin allows you to insert social icons in any widget area.
 
 Simple Social Icons is an easy to use, customizable way to display icons that link visitors to your various social profiles. With it, you can easily choose which profiles to link to, customize the color and size of your icons, as well as align them to the left, center, or right, all from the widget form (no settings page necessary!).
 
+*Note: The simple_social_default_glyphs filter has been deprecated from this plugin.
+
 == Installation ==
 
 1. Upload the entire simple-social-icons folder to the /wp-content/plugins/ directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widgetized Area.
+1. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widget area.
 1. Configure the widget by choosing a title, icon size and color, and the URLs to your various social profiles.
 
 == Frequently Asked Questions ==
 
 = Can I reorder the icons? =
 
-No, not at this time.
+Yes, icons can be reordered with the use of a filter. See: https://github.com/copyblogger/simple-social-icons/wiki/Reorder-icons-in-version-2.0
+
+= Can I add an icon? =
+
+Yes, icons can be added with the use of a filter. See: https://github.com/copyblogger/simple-social-icons/wiki/Add-an-additional-icon-in-version-2.0
 
 = Which services are included? =
 
@@ -49,7 +55,7 @@ No, not at this time.
 * Xing
 * YouTube
 
-NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
+NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
 
