@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: studiopress, nathanrice, bgardner, shannonsans, laurenmancke
+Contributors: studiopress, nathanrice, bgardner, laurenmancke, shannonsans
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.1.0
+Stable tag: 2.0
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -59,7 +59,7 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 == Changelog ==
 
-= 1.1.0 =
+= 2.0 =
 * Added Medium, Periscope, Phone, Snapchat, Vine, and Xing icons
 * Switched to svg, rather than icon font
 
