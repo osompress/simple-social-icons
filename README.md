@@ -1,8 +1,8 @@
 # Simple Social Icons
 
 Contributors: 
-* [Nathan Rice](https://github.com/nathanrice)
 * [StudioPress](https://github.com/studiopress)
+* [Nathan Rice](https://github.com/nathanrice)
 * [Brian Gardner](https://github.com/bgardner)
 * [Shannon Hale](https://github.com/shannonsans)
 * [Lauren Mancke](https://github.com/laurenmancke)
@@ -15,14 +15,18 @@ Simple Social Icons is an easy to use, customizable way to display icons that li
 
 1. Upload the entire simple-social-icons folder to the /wp-content/plugins/ directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widgetized Area.
+3. In your Widgets menu, simply drag the widget labeled "Simple Social Icons" into a widget area.
 4. Configure the widget by choosing a title, icon size and color, and the URLs to your various social profiles.
 
 ### Frequently Asked Questions
 
 ##### Can I reorder the icons?
 
-No, not at this time.
+Yes, icons can be reordered with the use of a filter. See: https://github.com/copyblogger/simple-social-icons/wiki/Reorder-icons-in-version-2.0
+
+##### Can I add an icon?
+
+Yes, icons can be added with the use of a filter. See: https://github.com/copyblogger/simple-social-icons/wiki/Add-an-additional-icon-in-version-2.0
 
 ##### Which services are included?
 
@@ -49,7 +53,7 @@ No, not at this time.
 * Xing
 * YouTube
 
-NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
+NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 ##### Changelog
 
