@@ -6,7 +6,7 @@ Description: A simple, CSS and icon driven social icons widget.
 Author: Nathan Rice
 Author URI: http://www.nathanrice.net/
 
-Version: 1.1.0
+Version: 2.0
 
 Text Domain: simple-social-icons
 Domain Path: /languages
