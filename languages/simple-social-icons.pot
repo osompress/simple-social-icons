@@ -197,11 +197,11 @@ msgid "Align Right"
 msgstr ""
 
 #: simple-social-icons.php:297
-msgid "Icon Font Color:"
+msgid "Icon Color:"
 msgstr ""
 
 #: simple-social-icons.php:299
-msgid "Icon Font Hover Color:"
+msgid "Icon Hover Color:"
 msgstr ""
 
 #: simple-social-icons.php:301
@@ -225,7 +225,7 @@ msgid "http://wordpress.org/plugins/simple-social-icons/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "A simple, CSS and icon font driven social icons widget."
+msgid "A simple, CSS and icon driven social icons widget."
 msgstr ""
 
 #. Author of the plugin/theme

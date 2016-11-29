@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: nathanrice, studiopress, bgardner, shannonsans
+Contributors: nathanrice, studiopress, bgardner, shannonsans, laurenmancke
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.3.1
@@ -35,17 +35,27 @@ No, not at this time.
 * Google+
 * Instagram
 * LinkedIn
+* Medium
+* Periscope
+* Phone
 * Pinterest
 * RSS
+* Snapchat
 * StumbleUpon
 * Tumblr
 * Twitter
 * Vimeo
+* Vine
+* Xing
 * YouTube
 
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company. Icons that are included in the social extension can be identified at http://www.entypo.com/.
 
 == Changelog ==
+
+= 1.1.0 =
+* Added Medium, Periscope, Phone, Snapchat, Vine, and Xing icons
+* Switched to svg, rather than icon font
 
 = 1.0.14 =
 * Accessibility improvements: change icon color on focus as well as on hover, add text description for assistive technologies
