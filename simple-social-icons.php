@@ -69,6 +69,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'background_color'       => '#999999',
 			'background_color_hover' => '#666666',
 			'alignment'              => 'alignleft',
+			'behance'              => '',
 			'bloglovin'              => '',
 			'dribbble'               => '',
 			'email'                  => '',
@@ -88,7 +89,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'tumblr'                 => '',
 			'twitter'                => '',
 			'vimeo'                  => '',
-			'vine'                   => '',
 			'xing'                   => '',
 			'youtube'                => '',
 		) );
@@ -97,6 +97,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * Social profile choices.
 		 */
 		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
+			'behance' => array(
+				'label'   => __( 'Behance URI', 'simple-social-icons' ),
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-behance" aria-labelledby="social-behance"><title id="social-behance">' . __( 'Behance', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-behance"></use></svg></a></li>',
+			),
 			'bloglovin' => array(
 				'label'   => __( 'Bloglovin URI', 'simple-social-icons' ),
 				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-bloglovin" aria-labelledby="social-bloglovin"><title id="social-bloglovin">' . __( 'Bloglovin', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-bloglovin"></use></svg></a></li>',
@@ -172,10 +176,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'vimeo' => array(
 				'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
 				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-vimeo" aria-labelledby="social-vimeo"><title id="social-vimeo">' . __( 'Vimeo', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-vimeo"></use></svg></a></li>',
-			),
-			'vine' => array(
-				'label'   => __( 'Vine URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-vine" aria-labelledby="social-vine"><title id="social-vine">' . __( 'Vine', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-vine"></use></svg></a></li>',
 			),
 			'xing' => array(
 				'label'   => __( 'Xing URI', 'simple-social-icons' ),
