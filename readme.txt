@@ -32,6 +32,7 @@ Yes, icons can be added with the use of a filter. See: https://github.com/copybl
 
 = Which services are included? =
 
+* Behance
 * Bloglovin
 * Dribbble
 * Email
@@ -51,7 +52,6 @@ Yes, icons can be added with the use of a filter. See: https://github.com/copybl
 * Tumblr
 * Twitter
 * Vimeo
-* Vine
 * Xing
 * YouTube
 
@@ -60,7 +60,7 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 == Changelog ==
 
 = 2.0 =
-* Added Medium, Periscope, Phone, Snapchat, Vine, and Xing icons
+* Added Behance, Medium, Periscope, Phone, Snapchat, and Xing icons
 * Switched to svg, rather than icon font
 
 = 1.0.14 =
