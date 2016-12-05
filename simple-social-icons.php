@@ -99,91 +99,91 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
 			'behance' => array(
 				'label'   => __( 'Behance URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-behance" aria-labelledby="social-behance"><title id="social-behance">' . __( 'Behance', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-behance"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-behance" aria-labelledby="social-behance"><title id="social-behance">' . __( 'Behance', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-behance' ) . '"></use></svg></a></li>',
 			),
 			'bloglovin' => array(
 				'label'   => __( 'Bloglovin URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-bloglovin" aria-labelledby="social-bloglovin"><title id="social-bloglovin">' . __( 'Bloglovin', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-bloglovin"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-bloglovin" aria-labelledby="social-bloglovin"><title id="social-bloglovin">' . __( 'Bloglovin', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-bloglovin' ) . '"></use></svg></a></li>',
 			),
 			'dribbble' => array(
 				'label'   => __( 'Dribbble URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-dribbble" aria-labelledby="social-dribbble"><title id="social-dribbble">' . __( 'Dribbble', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-dribbble"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-dribbble" aria-labelledby="social-dribbble"><title id="social-dribbble">' . __( 'Dribbble', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-dribbble' ) . '"></use></svg></a></li>',
 			),
 			'email' => array(
 				'label'   => __( 'Email URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-email" aria-labelledby="social-email"><title id="social-email">' . __( 'Email', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-email"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-email" aria-labelledby="social-email"><title id="social-email">' . __( 'Email', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-email' ) . '"></use></svg></a></li>',
 			),
 			'facebook' => array(
 				'label'   => __( 'Facebook URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-facebook" aria-labelledby="social-facebook"><title id="social-facebook">' . __( 'Facebook', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-facebook"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-facebook" aria-labelledby="social-facebook"><title id="social-facebook">' . __( 'Facebook', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-facebook' ) . '"></use></svg></a></li>',
 			),
 			'flickr' => array(
 				'label'   => __( 'Flickr URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-flickr" aria-labelledby="social-flickr"><title id="social-flickr">' . __( 'Flickr', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-flickr"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-flickr" aria-labelledby="social-flickr"><title id="social-flickr">' . __( 'Flickr', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-flickr' ) . '"></use></svg></a></li>',
 			),
 			'github' => array(
 				'label'   => __( 'GitHub URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-github" aria-labelledby="social-github"><title id="social-github">' . __( 'Github', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-github"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-github" aria-labelledby="social-github"><title id="social-github">' . __( 'Github', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-github' ) . '"></use></svg></a></li>',
 			),
 			'gplus' => array(
 				'label'   => __( 'Google+ URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-gplus" aria-labelledby="social-gplus"><title id="social-gplus">' . __( 'Google+', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-gplus"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-gplus" aria-labelledby="social-gplus"><title id="social-gplus">' . __( 'Google+', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-gplus' ) . '"></use></svg></a></li>',
 			),
 			'instagram' => array(
 				'label'   => __( 'Instagram URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-instagram" aria-labelledby="social-instagram"><title id="social-instagram">' . __( 'Instagram', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-instagram"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-instagram" aria-labelledby="social-instagram"><title id="social-instagram">' . __( 'Instagram', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-instagram' ) . '"></use></svg></a></li>',
 			),
 			'linkedin' => array(
 				'label'   => __( 'Linkedin URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-linkedin" aria-labelledby="social-linkedin"><title id="social-linkedin">' . __( 'Linkedin', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-linkedin"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-linkedin" aria-labelledby="social-linkedin"><title id="social-linkedin">' . __( 'Linkedin', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-linkedin' ) . '"></use></svg></a></li>',
 			),
 			'medium' => array(
 				'label'   => __( 'Medium URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-medium" aria-labelledby="social-medium"><title id="social-medium">' . __( 'Medium', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-medium"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-medium" aria-labelledby="social-medium"><title id="social-medium">' . __( 'Medium', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-medium' ) . '"></use></svg></a></li>',
 			),
 			'periscope' => array(
 				'label'   => __( 'Periscope URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-periscope" aria-labelledby="social-periscope"><title id="social-periscope">' . __( 'Periscope', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-periscope"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-periscope" aria-labelledby="social-periscope"><title id="social-periscope">' . __( 'Periscope', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-periscope' ) . '"></use></svg></a></li>',
 			),
 			'phone' => array(
 				'label'   => __( 'Phone URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-phone" aria-labelledby="social-phone"><title id="social-phone">' . __( 'Phone', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-phone"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-phone" aria-labelledby="social-phone"><title id="social-phone">' . __( 'Phone', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-phone' ) . '"></use></svg></a></li>',
 			),
 			'pinterest' => array(
 				'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-pinterest" aria-labelledby="social-pinterest"><title id="social-pinterest">' . __( 'Pinterest', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-pinterest"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-pinterest" aria-labelledby="social-pinterest"><title id="social-pinterest">' . __( 'Pinterest', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-pinterest' ) . '"></use></svg></a></li>',
 			),
 			'rss' => array(
 				'label'   => __( 'RSS URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-rss" aria-labelledby="social-rss"><title id="social-rss">' . __( 'RSS', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-rss"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-rss" aria-labelledby="social-rss"><title id="social-rss">' . __( 'RSS', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-rss' ) . '"></use></svg></a></li>',
 			),
 			'snapchat' => array(
 				'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-snapchat" aria-labelledby="social-snapchat"><title id="social-snapchat">' . __( 'Snapchat', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-snapshat"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-snapchat" aria-labelledby="social-snapchat"><title id="social-snapchat">' . __( 'Snapchat', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-snapshat' ) . '"></use></svg></a></li>',
 			),
 			'stumbleupon' => array(
 				'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-stumbleupon" aria-labelledby="social-stumbleupon"><title id="social-stumbleupon">' . __( 'StumbleUpon', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-stumbleupon"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-stumbleupon" aria-labelledby="social-stumbleupon"><title id="social-stumbleupon">' . __( 'StumbleUpon', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-stumbleupon' ) . '"></use></svg></a></li>',
 			),
 			'tumblr' => array(
 				'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-tumblr" aria-labelledby="social-tumblr"><title id="social-tumblr">' . __( 'Tumblr', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-tumblr"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-tumblr" aria-labelledby="social-tumblr"><title id="social-tumblr">' . __( 'Tumblr', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-tumblr' ) . '"></use></svg></a></li>',
 			),
 			'twitter' => array(
 				'label'   => __( 'Twitter URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-twitter" aria-labelledby="social-twitter"><title id="social-twitter">' . __( 'Twitter', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-twitter"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-twitter" aria-labelledby="social-twitter"><title id="social-twitter">' . __( 'Twitter', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-twitter' ) . '"></use></svg></a></li>',
 			),
 			'vimeo' => array(
 				'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-vimeo" aria-labelledby="social-vimeo"><title id="social-vimeo">' . __( 'Vimeo', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-vimeo"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-vimeo" aria-labelledby="social-vimeo"><title id="social-vimeo">' . __( 'Vimeo', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-vimeo' ) . '"></use></svg></a></li>',
 			),
 			'xing' => array(
 				'label'   => __( 'Xing URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-xing" aria-labelledby="social-xing"><title id="social-xing">' . __( 'Xing', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-xing"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-xing" aria-labelledby="social-xing"><title id="social-xing">' . __( 'Xing', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-xing' ) . '"></use></svg></a></li>',
 			),
 			'youtube' => array(
 				'label'   => __( 'YouTube URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-youtube" aria-labelledby="social-youtube"><title id="social-youtube">' . __( 'YouTube', 'simple-social-icons' ) . '</title><use xlink:href="' . plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-youtube"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-youtube" aria-labelledby="social-youtube"><title id="social-youtube">' . __( 'YouTube', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-youtube' ) . '"></use></svg></a></li>',
 			),
 		) );
 
