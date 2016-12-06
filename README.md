@@ -1,6 +1,6 @@
 # Simple Social Icons
 
-Contributors: 
+Contributors:
 * [StudioPress](https://github.com/studiopress)
 * [Nathan Rice](https://github.com/nathanrice)
 * [Brian Gardner](https://github.com/bgardner)
@@ -122,6 +122,6 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 1.0.14
 * Accessibility improvements: change icon color on focus as well as on hover, add text description for assistive technologies
 
-2.0
+2.0.0
 * Added Behance, Medium, Periscope, Phone, Snapchat, and Xing icons
 * Switched to svg, rather than icon font
