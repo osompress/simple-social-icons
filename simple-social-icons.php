@@ -159,7 +159,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			),
 			'snapchat' => array(
 				'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
-				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-snapchat" aria-labelledby="social-snapchat"><title id="social-snapchat">' . __( 'Snapchat', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-snapshat' ) . '"></use></svg></a></li>',
+				'pattern' => '<li><a href="%s" %s><svg role="img" class="social-snapchat" aria-labelledby="social-snapchat"><title id="social-snapchat">' . __( 'Snapchat', 'simple-social-icons' ) . '</title><use xlink:href="' . esc_url( plugin_dir_url(__FILE__) . 'symbol-defs.svg#social-snapchat' ) . '"></use></svg></a></li>',
 			),
 			'stumbleupon' => array(
 				'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
