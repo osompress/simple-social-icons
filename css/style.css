@@ -1,5 +1,5 @@
-.simple-social-icons [class^="social-"],
-.simple-social-icons [class*=" social-"] {
+.simple-social-icons svg[class^="social-"],
+.simple-social-icons svg[class*=" social-"] {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
