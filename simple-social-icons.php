@@ -26,6 +26,13 @@ function simple_social_icons_load_textdomain() {
 class Simple_Social_Icons_Widget extends WP_Widget {
 
 	/**
+	 * Plugin version for enqueued static resources.
+	 *
+	 * @var string
+	 */
+	protected $version = '2.0.1';
+
+	/**
 	 * Default widget values.
 	 *
 	 * @var array
@@ -402,7 +409,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		$cssfile = apply_filters( 'simple_social_default_stylesheet', plugin_dir_url( __FILE__ ) . 'css/style.css' );
 
-		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), '1.0.12', 'all' );
+		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
 
 		wp_enqueue_script('svg-x-use', plugin_dir_url(__FILE__) . 'svgxuse.js', array(), '1.1.21' );
 	}
