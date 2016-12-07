@@ -209,7 +209,21 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		add_action( 'admin_footer-widgets.php', array( $this, 'print_scripts' ), 9999 );
 
 	}
-
+	
+	/**
+	 * Return plugin version
+	 *
+	 * Grab plugin version from plugin header.
+	 */
+	function plugin_version() {
+		
+		$plugin = get_plugin_data( __FILE__, false, false );
+		$version = $plugin['Version'];
+		
+		return $version;
+		
+	}
+	
 	/**
 	 * Color Picker.
 	 *
@@ -402,7 +416,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		$cssfile = apply_filters( 'simple_social_default_stylesheet', plugin_dir_url( __FILE__ ) . 'css/style.css' );
 
-		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), '1.0.12', 'all' );
+		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), self::plugin_version(), 'all' );
 
 		wp_enqueue_script('svg-x-use', plugin_dir_url(__FILE__) . 'svgxuse.js', array(), '1.1.21' );
 	}
