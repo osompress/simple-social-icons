@@ -64,6 +64,7 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 * Made CSS selectors more specific
 * Added classes to each icon
 * Added plugin version to enqueued CSS
+* Updated Google + icon
 
 = 2.0.0 =
 * Added Behance, Medium, Periscope, Phone, Snapchat, and Xing icons

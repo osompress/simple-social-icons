@@ -125,3 +125,10 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 2.0.0
 * Added Behance, Medium, Periscope, Phone, Snapchat, and Xing icons
 * Switched to svg, rather than icon font
+
+2.0.1
+* Fixed typo in Snapchat icon markup
+* Made CSS selectors more specific
+* Added classes to each icon
+* Added plugin version to enqueued CSS
+* Updated Google + icon
