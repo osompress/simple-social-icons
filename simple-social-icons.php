@@ -392,7 +392,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					continue;
 
 				if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) )
-	                $new_window = '';
+					$new_window = '';
 
 				if ( is_email( $instance[ $profile ] ) )
 					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( $instance[$profile] ), $new_window );
