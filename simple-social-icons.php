@@ -320,7 +320,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		foreach ( (array) $this->profiles as $profile => $data ) {
 
 			printf( '<p><label for="%s">%s:</label></p>', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $data['label'] ) );
-			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), esc_url( $instance[$profile] ) );
+			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), $instance[$profile] );
 			printf( '</p>' );
 
 		}
@@ -352,8 +352,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			}
 
 			/** Sanitize Profile URIs */
-			elseif ( array_key_exists( $key, (array) $this->profiles ) ) {
-				$newinstance[$key] = esc_url( $newinstance[$key] );
+			elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) ) {
+				$newinstance[ $key ] = esc_url( $newinstance[ $key ] );
 			}
 
 		}
