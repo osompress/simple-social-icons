@@ -382,14 +382,14 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 			$output = '';
 
-			$new_window = $instance['new_window'] ? 'target="_blank"' : '';
-
 			$profiles = (array) $this->profiles;
 
 			foreach ( $profiles as $profile => $data ) {
 
 				if ( empty( $instance[ $profile ] ) )
 					continue;
+
+				$new_window = $instance['new_window'] ? 'target="_blank"' : '';
 
 				if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) )
 					$new_window = '';
