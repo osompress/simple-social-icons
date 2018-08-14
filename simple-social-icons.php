@@ -54,6 +54,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	protected $profiles;
 
 	/**
+	 * Array of widget instance IDs. Used to generate CSS.
+	 *
+	 * @var array
+	 */
+	protected $active_instances;
+
+	/**
 	 * Constructor method.
 	 *
 	 * Set some global values and create widget.
@@ -203,13 +210,15 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			'id_base' => 'simple-social-icons',
 		);
 
+		$this->active_instances = array();
+
 		parent::__construct( 'simple-social-icons', __( 'Simple Social Icons', 'simple-social-icons' ), $widget_ops, $control_ops );
 
 		/** Enqueue scripts and styles */
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
 
 		/** Load CSS in <head> */
-		add_action( 'wp_head', array( $this, 'css' ) );
+		add_action( 'wp_footer', array( $this, 'css' ) );
 
 		/** Load color picker */
 		add_action( 'admin_enqueue_scripts', array( $this, 'load_color_picker' ) );
@@ -405,6 +414,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		echo $after_widget;
 
+		$this->active_instances[] = $this->number;
+
 	}
 
 	function enqueue_css() {
@@ -425,38 +436,44 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		/** Pull widget settings, merge with defaults */
 		$all_instances = $this->get_settings();
-		if ( ! isset( $this->number ) || ! isset( $all_instances[$this->number] ) ) {
-			return;
+
+		$css = '';
+		foreach ( $this->active_instances as $instance_id ) {
+			// Skip if info for this instance does not exist - this should never happen.
+			if ( ! isset( $all_instances[ $instance_id ] ) ) {
+				continue;
+			}
+
+			$instance = wp_parse_args( $all_instances[ $instance_id ], $this->defaults );
+
+			$font_size = round( (int) $instance['size'] / 2 );
+			$icon_padding = round ( (int) $font_size / 2 );
+
+			/** The CSS to output */
+			$css .= '
+			#simple-social-icons-'.$instance_id.' ul li a,
+			#simple-social-icons-'.$instance_id.' ul li a:hover,
+			#simple-social-icons-'.$instance_id.' ul li a:focus {
+				background-color: ' . $instance['background_color'] . ' !important;
+				border-radius: ' . $instance['border_radius'] . 'px;
+				color: ' . $instance['icon_color'] . ' !important;
+				border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid !important;
+				font-size: ' . $font_size . 'px;
+				padding: ' . $icon_padding . 'px;
+			}
+
+			#simple-social-icons-'.$instance_id.' ul li a:hover,
+			#simple-social-icons-'.$instance_id.' ul li a:focus {
+				background-color: ' . $instance['background_color_hover'] . ' !important;
+				border-color: ' . $instance['border_color_hover'] . ' !important;
+				color: ' . $instance['icon_color_hover'] . ' !important;
+			}
+
+			#simple-social-icons-'.$instance_id.' ul li a:focus {
+				outline: 1px dotted ' . $instance['background_color_hover'] . ' !important;
+			}';
+
 		}
-
-		$instance = wp_parse_args( $all_instances[$this->number], $this->defaults );
-
-		$font_size = round( (int) $instance['size'] / 2 );
-		$icon_padding = round ( (int) $font_size / 2 );
-
-		/** The CSS to output */
-		$css = '
-		.simple-social-icons ul li a,
-		.simple-social-icons ul li a:hover,
-		.simple-social-icons ul li a:focus {
-			background-color: ' . $instance['background_color'] . ' !important;
-			border-radius: ' . $instance['border_radius'] . 'px;
-			color: ' . $instance['icon_color'] . ' !important;
-			border: ' . $instance['border_width'] . 'px ' . $instance['border_color'] . ' solid !important;
-			font-size: ' . $font_size . 'px;
-			padding: ' . $icon_padding . 'px;
-		}
-
-		.simple-social-icons ul li a:hover,
-		.simple-social-icons ul li a:focus {
-			background-color: ' . $instance['background_color_hover'] . ' !important;
-			border-color: ' . $instance['border_color_hover'] . ' !important;
-			color: ' . $instance['icon_color_hover'] . ' !important;
-		}
-
-		.simple-social-icons ul li a:focus {
-			outline: 1px dotted ' . $instance['background_color_hover'] . ' !important;
-		}';
 
 		/** Minify a bit */
 		$css = str_replace( "\t", '', $css );
