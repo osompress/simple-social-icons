@@ -440,11 +440,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$css = '';
 		foreach ( $this->active_instances as $instance_id ) {
 			// Skip if info for this instance does not exist - this should never happen.
-			if (! isset( $all_instances[ $instance_id ] ) ) {
+			if ( ! isset( $all_instances[ $instance_id ] ) ) {
 				continue;
 			}
-			
-			$instance = wp_parse_args( $all_instances[$instance_id], $this->defaults );
+
+			$instance = wp_parse_args( $all_instances[ $instance_id ], $this->defaults );
 
 			$font_size = round( (int) $instance['size'] / 2 );
 			$icon_padding = round ( (int) $font_size / 2 );
