@@ -3,11 +3,9 @@
 Plugin Name: Simple Social Icons
 Plugin URI: http://wordpress.org/plugins/simple-social-icons/
 Description: A simple CSS and SVG driven social icons widget.
-Author: Nathan Rice
-Author URI: http://www.nathanrice.net/
-
+Author: StudioPress
+Author URI: http://www.studiopress.com/
 Version: 2.0.1
-
 Text Domain: simple-social-icons
 Domain Path: /languages
 
