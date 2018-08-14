@@ -329,7 +329,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		foreach ( (array) $this->profiles as $profile => $data ) {
 
 			printf( '<p><label for="%s">%s:</label></p>', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $data['label'] ) );
-			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), $instance[$profile] );
+			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), $instance[ $profile ] );
 			printf( '</p>' );
 
 		}
@@ -348,16 +348,21 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 			/** Border radius and Icon size must not be empty, must be a digit */
 			if ( ( 'border_radius' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
-				$newinstance[$key] = 0;
+				$newinstance[ $key ] = 0;
 			}
 
 			if ( ( 'border_width' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
-				$newinstance[$key] = 0;
+				$newinstance[ $key ] = 0;
+			}
+
+			/** Accept empty colors */
+			elseif ( strpos( $key, '_color' ) && '' == trim( $value ) ) {
+				$newinstance[ $key ] = '';
 			}
 
 			/** Validate hex code colors */
 			elseif ( strpos( $key, '_color' ) && 0 == preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
-				$newinstance[$key] = $oldinstance[$key];
+				$newinstance[ $key ] = $oldinstance[ $key ];
 			}
 
 			/** Sanitize Profile URIs */
@@ -404,9 +409,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					$new_window = '';
 
 				if ( is_email( $instance[ $profile ] ) )
-					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( antispambot( $instance[$profile] ) ), $new_window );
+					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
 				else
-					$output .= sprintf( $data['pattern'], esc_url( $instance[$profile] ), $new_window );
+					$output .= sprintf( $data['pattern'], esc_url( $instance[ $profile ] ), $new_window );
 
 			}
 
@@ -452,11 +457,21 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			$font_size = round( (int) $instance['size'] / 2 );
 			$icon_padding = round ( (int) $font_size / 2 );
 
+			// Treat null values as transparent
+			$instance['icon_color'] = ( $instance['icon_color'] ) ? $instance['icon_color'] : 'transparent';
+			$instance['background_color'] = ( $instance['background_color'] ) ? $instance['background_color'] : 'transparent';
+			$instance['border_color'] = ( $instance['border_color'] ) ? $instance['border_color'] : 'transparent';
+
+			$instance['icon_color_hover'] = ( $instance['icon_color_hover'] ) ? $instance['icon_color_hover'] : 'transparent';
+			$instance['background_color_hover'] = ( $instance['background_color_hover'] ) ? $instance['background_color_hover'] : 'transparent';
+			$instance['border_color_hover'] = ( $instance['border_color_hover'] ) ? $instance['border_color_hover'] : 'transparent';
+
+
 			/** The CSS to output */
 			$css .= '
-			#simple-social-icons-'.$instance_id.' ul li a,
-			#simple-social-icons-'.$instance_id.' ul li a:hover,
-			#simple-social-icons-'.$instance_id.' ul li a:focus {
+			#simple-social-icons-' . $instance_id . ' ul li a,
+			#simple-social-icons-' . $instance_id . ' ul li a:hover,
+			#simple-social-icons-' . $instance_id . ' ul li a:focus {
 				background-color: ' . $instance['background_color'] . ' !important;
 				border-radius: ' . $instance['border_radius'] . 'px;
 				color: ' . $instance['icon_color'] . ' !important;
