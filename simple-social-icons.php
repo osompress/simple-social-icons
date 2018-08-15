@@ -364,10 +364,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			}
 
 			/** Sanitize Profile URIs */
-			elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) ) {
+			elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) && ! 'phone' === $key ) {
 				$newinstance[ $key ] = esc_url( $newinstance[ $key ] );
 			}
-
 		}
 
 		return $newinstance;
@@ -406,10 +405,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) )
 					$new_window = '';
 
-				if ( is_email( $instance[ $profile ] ) )
+				if ( is_email( $instance[ $profile ] ) ) {
 					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
-				else
+				} elseif ( 'phone' === $profile ) {
+					$output .= sprintf( $data['pattern'], 'tel:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
+				} else {
 					$output .= sprintf( $data['pattern'], esc_url( $instance[ $profile ] ), $new_window );
+				}
 
 			}
 
