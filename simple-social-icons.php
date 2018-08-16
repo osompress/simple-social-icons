@@ -13,7 +13,14 @@ License: GNU General Public License v2.0 (or later)
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 add_action( 'plugins_loaded', 'simple_social_icons_load_textdomain' );
+
+register_uninstall_hook( __FILE__, array( 'Simple_Social_Icon_Widget', 'plugin_uninstall' ) );
+
 /**
  * Load textdomain
  */
@@ -518,6 +525,19 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$markup .= '</svg></a></li>';
 
 		return $markup;
+	}
+
+	/**
+	 * Cleans the plugin option if exists.
+	 *
+	 * @since 2.0
+	 *
+	 * @return void
+	 */
+	public static function plugin_uninstall() {
+		if ( get_option( 'widget_simple-social-icons' ) ) {
+			delete_option( 'widget_simple-social-icons' );
+		}
 	}
 
 
