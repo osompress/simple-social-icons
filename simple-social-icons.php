@@ -501,8 +501,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		}
 
 		/** Minify a bit */
-		#$css = str_replace( "\t", '', $css );
-		#$css = str_replace( array( "\n", "\r" ), ' ', $css );
+		$css = str_replace( "\t", '', $css );
+		$css = str_replace( array( "\n", "\r" ), ' ', $css );
 
 		/** Echo the CSS */
 		echo '<style type="text/css" media="screen">' . $css . '</style>';
