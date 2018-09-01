@@ -447,7 +447,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		/** Pull widget settings, merge with defaults */
 		$all_instances = $this->get_settings();
-        error_log( print_r( $all_instances, 1 ) );
 
 		$css = '';
 		foreach ( $this->active_instances as $instance_id ) {
