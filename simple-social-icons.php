@@ -511,7 +511,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * @return string The full markup for the given icon.
 	 */
 	function get_icon_markup( $icon, $label ) {
-		$markup = '<li class="ssi-' . $icon . '"><a href="%s" %s>';
+		$markup = '<li class="ssi-' . $icon . '"><a href="%s" %s rel="nofollow">';
 		$markup .= '<svg role="img" class="social-' . $icon . '" aria-labelledby="social-' . $icon . '-{WIDGET_INSTANCE_ID}">';
 		$markup .= '<title id="social-' . $icon . '-{WIDGET_INSTANCE_ID}' . '">' . $label . '</title>';
 		$markup .= '<use xlink:href="' . esc_url( plugin_dir_url( __FILE__ ) . 'symbol-defs.svg#social-' . $icon ) . '"></use>';
