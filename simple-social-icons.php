@@ -520,9 +520,19 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		return $markup;
 	}
 
+	/**
+	 * Remove option when uninstalling the plugin.
+	 *
+	 * @since 2.1.0
+	 */
+	public static function plugin_uninstall() {
+		delete_option( 'widget_simple-social-icons' );
+	}
+
 
 }
 
+register_uninstall_hook( __FILE__, array( 'Simple_Social_Icons_Widget', 'plugin_uninstall' ) );
 add_action( 'widgets_init', 'ssiw_load_widget' );
 /**
  * Widget Registration.
