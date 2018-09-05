@@ -71,6 +71,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$this->defaults = apply_filters( 'simple_social_default_styles', array(
 			'title'                  => '',
 			'new_window'             => 0,
+			'output_css'             => 0,
 			'size'                   => 36,
 			'border_radius'          => 3,
 			'border_width'           => 0,
@@ -292,6 +293,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		<p><label><input id="<?php echo $this->get_field_id( 'new_window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new_window' ); ?>" value="1" <?php checked( 1, $instance['new_window'] ); ?>/> <?php esc_html_e( 'Open links in new window?', 'simple-social-icons' ); ?></label></p>
 
+		<p><label><input id="<?php echo $this->get_field_id( 'output_css' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'output_css' ); ?>" value="1" <?php checked( 1, $instance['output_css'] ); ?>/> <?php esc_html_e( 'Disable css output?', 'simple-social-icons' ); ?></label></p>
+
 		<p><label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php _e( 'Icon Size', 'simple-social-icons' ); ?>:</label> <input id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>" type="text" value="<?php echo esc_attr( $instance['size'] ); ?>" size="3" />px</p>
 
 		<p><label for="<?php echo $this->get_field_id( 'border_radius' ); ?>"><?php _e( 'Icon Border Radius:', 'simple-social-icons' ); ?></label> <input id="<?php echo $this->get_field_id( 'border_radius' ); ?>" name="<?php echo $this->get_field_name( 'border_radius' ); ?>" type="text" value="<?php echo esc_attr( $instance['border_radius'] ); ?>" size="3" />px</p>
@@ -452,6 +455,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				continue;
 			}
 
+            if ( isset( $all_instances[ $instance_id ]['output_css'] ) && '1' === $all_instances[ $instance_id ]['output_css'] ) {
+                continue;
+            }
+
 			$instance = wp_parse_args( $all_instances[ $instance_id ], $this->defaults );
 
 			$font_size = round( (int) $instance['size'] / 2 );
@@ -487,7 +494,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				color: ' . $instance['icon_color_hover'] . ' !important;
 			}
 
-			#simple-social-icons-'.$instance_id.' ul li a:focus {
+			#simple-social-icons-' . $instance_id . ' ul li a:focus {
 				outline: 1px dotted ' . $instance['background_color_hover'] . ' !important;
 			}';
 
