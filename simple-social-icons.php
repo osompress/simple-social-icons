@@ -59,6 +59,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	protected $active_instances;
 
 	/**
+	 * Constrols custom css output.
+	 *
+	 * @var bool
+	 */
+	protected $disable_css_output;
+
+	/**
 	 * Constructor method.
 	 *
 	 * Set some global values and create widget.
@@ -199,6 +206,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			),
 		) );
 
+		/**
+		 * If setting this filter to true, we recommend mentioning in your theme documentation
+		 * that Simple Social Icons widget settings will noy display styling options, as your
+		 * theme styles icons for them.
+		 */
+		$this->disable_css_output = apply_filters( 'simple_social_disable_custom_css', false );
+
 		$widget_ops = array(
 			'classname'   => 'simple-social-icons',
 			'description' => __( 'Displays select social icons.', 'simple-social-icons' ),
@@ -307,7 +321,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			</select>
 		</p>
 
-		<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
+		<?php if ( ! $this->disable_css_output ) { ?>
+			<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
+		<?php } ?>
 
 		<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Icon Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'icon_color' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color'] ); ?>" value="<?php echo esc_attr( $instance['icon_color'] ); ?>" size="6" /></p>
 
@@ -321,7 +337,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		<p><label for="<?php echo $this->get_field_id( 'border_color_hover' ); ?>"><?php _e( 'Border Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'border_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'border_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['border_color_hover'] ); ?>" size="6" /></p>
 
-		<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
+		<?php if ( ! $this->disable_css_output ) { ?>
+			<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
+		<?php } ?>
 
 		<?php
 		foreach ( (array) $this->profiles as $profile => $data ) {
@@ -448,7 +466,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$css = '';
 		foreach ( $this->active_instances as $instance_id ) {
 			// Skip if info for this instance does not exist - this should never happen.
-			if ( ! isset( $all_instances[ $instance_id ] ) ) {
+			if ( ! isset( $all_instances[ $instance_id ] ) || $this->disable_css_output ) {
 				continue;
 			}
 
