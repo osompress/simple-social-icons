@@ -59,7 +59,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	protected $active_instances;
 
 	/**
-	 * Constrols custom css output.
+	 * Controls custom css output.
 	 *
 	 * @var bool
 	 */
@@ -208,7 +208,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		/**
 		 * If setting this filter to true, we recommend mentioning in your theme documentation
-		 * that Simple Social Icons widget settings will noy display styling options, as your
+		 * that Simple Social Icons widget settings will not display styling options, as your
 		 * theme styles icons for them.
 		 */
 		$this->disable_css_output = apply_filters( 'simple_social_disable_custom_css', false );
