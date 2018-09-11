@@ -508,7 +508,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * @param string The lowercase icon name for use in tag attributes.
 	 * @param string The plain text icon label.
 	 *
-	 * @return filter The full filter with markup for the given icon.
+	 * @return string The full markup for the given icon.
 	 */
 	function get_icon_markup( $icon, $label ) {
 		$markup = '<li class="ssi-' . $icon . '"><a href="%s" %s>';
