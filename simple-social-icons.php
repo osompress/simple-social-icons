@@ -342,6 +342,14 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 */
 	function update( $newinstance, $oldinstance ) {
 
+		// Fields that can be transparent if their values are unset.
+		$can_be_transparent = array(
+			'background_color',
+			'background_color_hover',
+			'border_color',
+			'border_color_hover',
+		);
+
 		foreach ( $newinstance as $key => $value ) {
 
 			/** Border radius and Icon size must not be empty, must be a digit */
@@ -353,8 +361,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				$newinstance[ $key ] = 0;
 			}
 
-			/** Accept empty colors */
-			elseif ( strpos( $key, '_color' ) && '' == trim( $value ) ) {
+			/** Accept empty colors for permitted keys. */
+			elseif ( in_array( $key, $can_be_transparent, true ) && '' == trim( $value ) ) {
 				$newinstance[ $key ] = '';
 			}
 
@@ -446,6 +454,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$all_instances = $this->get_settings();
 
 		$css = '';
+
 		foreach ( $this->active_instances as $instance_id ) {
 			// Skip if info for this instance does not exist - this should never happen.
 			if ( ! isset( $all_instances[ $instance_id ] ) ) {
@@ -454,18 +463,14 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 			$instance = wp_parse_args( $all_instances[ $instance_id ], $this->defaults );
 
-			$font_size = round( (int) $instance['size'] / 2 );
-			$icon_padding = round ( (int) $font_size / 2 );
+			$font_size    = round( (int) $instance['size'] / 2 );
+			$icon_padding = round( (int) $font_size / 2 );
 
-			// Treat null values as transparent
-			$instance['icon_color'] = ( $instance['icon_color'] ) ? $instance['icon_color'] : 'transparent';
-			$instance['background_color'] = ( $instance['background_color'] ) ? $instance['background_color'] : 'transparent';
-			$instance['border_color'] = ( $instance['border_color'] ) ? $instance['border_color'] : 'transparent';
-
-			$instance['icon_color_hover'] = ( $instance['icon_color_hover'] ) ? $instance['icon_color_hover'] : 'transparent';
-			$instance['background_color_hover'] = ( $instance['background_color_hover'] ) ? $instance['background_color_hover'] : 'transparent';
-			$instance['border_color_hover'] = ( $instance['border_color_hover'] ) ? $instance['border_color_hover'] : 'transparent';
-
+			// Treat empty background and border colors as transparent.
+			$instance['background_color']       = $instance['background_color'] ?: 'transparent';
+			$instance['border_color']           = $instance['border_color'] ?: 'transparent';
+			$instance['background_color_hover'] = $instance['background_color_hover'] ?: 'transparent';
+			$instance['border_color_hover']     = $instance['border_color_hover'] ?: 'transparent';
 
 			/** The CSS to output */
 			$css .= '
@@ -480,24 +485,23 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				padding: ' . $icon_padding . 'px;
 			}
 
-			#simple-social-icons-'.$instance_id.' ul li a:hover,
-			#simple-social-icons-'.$instance_id.' ul li a:focus {
+			#simple-social-icons-' . $instance_id . ' ul li a:hover,
+			#simple-social-icons-' . $instance_id . ' ul li a:focus {
 				background-color: ' . $instance['background_color_hover'] . ' !important;
 				border-color: ' . $instance['border_color_hover'] . ' !important;
 				color: ' . $instance['icon_color_hover'] . ' !important;
 			}
 
-			#simple-social-icons-'.$instance_id.' ul li a:focus {
+			#simple-social-icons-' . $instance_id . ' ul li a:focus {
 				outline: 1px dotted ' . $instance['background_color_hover'] . ' !important;
 			}';
 
 		}
 
-		/** Minify a bit */
+		// Minify a bit.
 		$css = str_replace( "\t", '', $css );
 		$css = str_replace( array( "\n", "\r" ), ' ', $css );
 
-		/** Echo the CSS */
 		echo '<style type="text/css" media="screen">' . $css . '</style>';
 
 	}
