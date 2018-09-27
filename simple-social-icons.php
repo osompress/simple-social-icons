@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social Icons
-Plugin URI: http://wordpress.org/plugins/simple-social-icons/
+Plugin URI: https://wordpress.org/plugins/simple-social-icons/
 Description: A simple CSS and SVG driven social icons widget.
 Author: StudioPress
 Author URI: https://www.studiopress.com/
