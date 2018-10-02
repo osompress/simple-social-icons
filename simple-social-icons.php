@@ -538,7 +538,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$markup .= '<use xlink:href="' . esc_url( plugin_dir_url( __FILE__ ) . 'symbol-defs.svg#social-' . $icon ) . '"></use>';
 		$markup .= '</svg></a></li>';
 
-		return apply_filters( 'simple_social_icon_html', $markup );
+		return apply_filters( 'simple_social_icon_html', $markup, $icon, $label );
 	}
 
 	/**
