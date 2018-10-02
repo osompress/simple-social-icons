@@ -10,7 +10,7 @@ Text Domain: simple-social-icons
 Domain Path: /languages
 
 License: GNU General Public License v2.0 (or later)
-License URI: http://www.opensource.org/licenses/gpl-license.php
+License URI: https://www.opensource.org/licenses/gpl-license.php
 */
 
 add_action( 'plugins_loaded', 'simple_social_icons_load_textdomain' );
