@@ -425,7 +425,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				if ( empty( $instance[ $profile ] ) )
 					continue;
 
-				$new_window = $instance['new_window'] ? 'target="_blank"' : '';
+				$new_window = $instance['new_window'] ? 'target="_blank" rel="noopener noreferrer"' : '';
 
 				if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) )
 					$new_window = '';
