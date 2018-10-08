@@ -73,7 +73,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	function __construct() {
 
 		/**
-		 * Default widget option values.
+		 * Filter for default widget option values.
+		 *
+		 * @since 1.0.6
+		 *
+		 * @param array $defaults Default widget options.
 		 */
 		$this->defaults = apply_filters( 'simple_social_default_styles', array(
 			'title'                  => '',
@@ -113,7 +117,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		) );
 
 		/**
-		 * Social profile choices.
+		 * Filter for social profile choices.
+		 *
+		 * @since 1.0.6
+		 *
+		 * @param array $profiles Social icons to include in widget options.
 		 */
 		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
 			'behance' => array(
@@ -207,9 +215,21 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		) );
 
 		/**
-		 * If setting this filter to true, we recommend mentioning in your theme documentation
-		 * that Simple Social Icons widget settings will not display styling options, as your
-		 * theme styles icons for them.
+		 * Filter to disable output of custom CSS.
+		 *
+		 * Setting this to true in your child theme will:
+		 *  - Stop output of inline custom icon CSS.
+		 *  - Stop styling options showing in Simple Social Icons widget settings.
+		 *
+		 * The intent if enabling is that your theme will provide CSS for all
+		 * widget areas, instead of allowing people to set their own icon
+		 * styles. You should consider mentioning in theme documentation that
+		 * Simple Social Icons widget settings will not display styling
+		 * options, as your theme styles icons instead.
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param bool $disable_css_output True if custom CSS should be disabled.
 		 */
 		$this->disable_css_output = apply_filters( 'simple_social_disable_custom_css', false );
 
@@ -453,6 +473,13 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 	function enqueue_css() {
 
+		/**
+		 * Filter the plugin stylesheet location.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string $cssfile The full path to the stylesheet.
+		 */
 		$cssfile = apply_filters( 'simple_social_default_stylesheet', plugin_dir_url( __FILE__ ) . 'css/style.css' );
 
 		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
@@ -538,6 +565,15 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$markup .= '<use xlink:href="' . esc_url( plugin_dir_url( __FILE__ ) . 'symbol-defs.svg#social-' . $icon ) . '"></use>';
 		$markup .= '</svg></a></li>';
 
+		/**
+		 * Filter the icon markup HTML.
+		 *
+		 * @since 3.0.0
+		 *
+		 * @param string $markup The full HTML markup for a single icon.
+		 * @param string $icon The lowercase icon name used in tag attributes.
+		 * @param string $label The plain text icon label.
+		 */
 		return apply_filters( 'simple_social_icon_html', $markup, $icon, $label );
 	}
 
