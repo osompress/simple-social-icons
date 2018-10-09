@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: studiopress, nathanrice, bgardner, laurenmancke, shannonsans
+Contributors: studiopress, nathanrice, bgardner, laurenmancke, shannonsans, nickcernis, marksabbath, damiencarbery, helgatheviking
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.7
@@ -58,6 +58,17 @@ Yes, icons can be added with the use of a filter. See: https://github.com/copybl
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.0.0 =
+* Obfuscate email address from spambots
+* Prevent email links to open in new window if option selected
+* Fix saving email by removing http:// from it
+* Allow icons to accept transparent color on border and background
+* Fix phone by removing http:// from it
+* Updated Medium logo
+* Added a proper uninstall hook
+* Added a filter to disable the CSS
+* Added filter to update the HTML markup
 
 = 2.0.1 =
 * Fixed typo in Snapchat icon markup
