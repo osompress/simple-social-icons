@@ -8,16 +8,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "*",
-    "grunt-autoprefixer": "*",
     "grunt-checktextdomain": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-csscomb": "*",
-    "grunt-jsbeautifier": "*",
-    "grunt-jsvalidate": "*",
     "grunt-phplint": "*",
     "grunt-wp-i18n": "*",
     "load-grunt-tasks": "*"
