@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: studiopress, nathanrice, bgardner, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal
+Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.9
