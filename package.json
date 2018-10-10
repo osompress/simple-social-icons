@@ -1,5 +1,6 @@
 {
   "name": "simple-social-icons",
+  "main_plugin_file": "simple-social-icons",
   "description": "Development files for the Simple Social Icons plugin.",
   "repository": {
     "type": "git",
@@ -11,6 +12,10 @@
     "grunt-checktextdomain": "*",
     "grunt-phplint": "*",
     "grunt-wp-i18n": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-replace": "*",
+    "grunt-wptools": "*",
     "load-grunt-tasks": "*"
   },
   "plugin": {
