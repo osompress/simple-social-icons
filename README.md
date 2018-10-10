@@ -30,6 +30,14 @@ Yes, icons can be reordered with the use of a filter. See: https://github.com/co
 
 Yes, icons can be added with the use of a filter. See: https://github.com/copyblogger/simple-social-icons/wiki/Add-an-additional-icon-in-version-2.0
 
+= My icon styling changed after updating =
+
+If your theme includes custom icon styling, you can try adding this line to your functions.php file:
+
+`add_filter( 'simple_social_disable_custom_css', '__return_true' );`
+
+This will remove icon styling options in the widget settings, and prevent Simple Social Icons from overriding custom theme styling.
+
 = Which services are included? =
 
 * Behance
