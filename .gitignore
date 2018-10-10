@@ -1,5 +1,7 @@
 .DS_Store
-.*.swp
 Thumbs.db
 .svn
+.swp
 node_modules/
+vendor/
+build/
