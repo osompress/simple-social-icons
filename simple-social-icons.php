@@ -511,10 +511,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 			$icon_padding = round( (int) $font_size / 2 );
 
 			// Treat empty background and border colors as transparent.
-			$instance['background_color']       = $instance['background_color'] ?: 'transparent';
-			$instance['border_color']           = $instance['border_color'] ?: 'transparent';
-			$instance['background_color_hover'] = $instance['background_color_hover'] ?: 'transparent';
-			$instance['border_color_hover']     = $instance['border_color_hover'] ?: 'transparent';
+			$instance['background_color']       = $instance['background_color'] ? $instance['background_color'] : 'transparent';
+			$instance['border_color']           = $instance['border_color'] ? $instance['border_color'] : 'transparent';
+			$instance['background_color_hover'] = $instance['background_color_hover'] ? $instance['background_color_hover'] : 'transparent';
+			$instance['border_color_hover']     = $instance['border_color_hover'] ? $instance['border_color_hover'] : 'transparent';
 
 			/** The CSS to output */
 			$css .= '
