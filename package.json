@@ -7,17 +7,7 @@
     "url": "https://github.com/copyblogger/simple-social-icons"
   },
   "dependencies": {},
-  "devDependencies": {
-    "grunt": "*",
-    "grunt-checktextdomain": "*",
-    "grunt-phplint": "*",
-    "grunt-wp-i18n": "*",
-    "grunt-contrib-compress": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-replace": "*",
-    "grunt-wptools": "*",
-    "load-grunt-tasks": "*"
-  },
+  "devDependencies": {},
   "plugin": {
     "name": "Simple Social Icons",
     "uri": "https://github.com/copyblogger/simple-social-icons",
