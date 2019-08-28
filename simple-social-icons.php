@@ -193,7 +193,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
 				'pattern' => $this->get_icon_markup( 'stumbleupon', __( 'StumbleUpon', 'simple-social-icons' ) ),
 			),
-			'tumblr' => array(
+			'tripadvisor' => array(
 				'label'   => __( 'TripAdvisor URI', 'simple-social-icons' ),
 				'pattern' => $this->get_icon_markup( 'tripadvisor', __( 'TripAdvisor', 'simple-social-icons' ) ),
 			),
