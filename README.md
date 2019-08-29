@@ -57,6 +57,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * RSS
 * Snapchat
 * StumbleUpon
+* TripAdvisor
 * Tumblr
 * Twitter
 * Vimeo
