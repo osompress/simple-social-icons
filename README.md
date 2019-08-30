@@ -1,5 +1,6 @@
 === Plugin Name ===
-Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal
+
+Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal, merlinpatt
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 4.9
@@ -54,6 +55,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Periscope
 * Phone
 * Pinterest
+* Reddit
 * RSS
 * Snapchat
 * StumbleUpon
