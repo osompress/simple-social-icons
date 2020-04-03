@@ -5,7 +5,7 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: StudioPress
  * Author URI: https://www.studiopress.com/
- * Version: 3.0.1
+ * Version: 3.0.2
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
@@ -28,7 +28,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * @var string
 	 */
-	protected $version = '3.0.1';
+	protected $version = '3.0.2';
 
 	/**
 	 * Default widget values.

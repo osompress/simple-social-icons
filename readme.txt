@@ -2,8 +2,8 @@
 Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 3.0.1
+Tested up to: 5.4
+Stable tag: 3.0.2
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -66,6 +66,9 @@ This will remove icon styling options in the widget settings, and prevent Simple
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.0.2 =
+* Fixed issue where icons can fail if there is a space anywhere in its URL.
 
 = 3.0.1 =
 * Remove Grunt
