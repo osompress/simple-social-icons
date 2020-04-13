@@ -11,6 +11,8 @@
  *
  * License: GNU General Public License v2.0 (or later)
  * License URI: https://www.opensource.org/licenses/gpl-license.php
+ * 
+ * @package simple-social-icons
  */
 
 add_action( 'plugins_loaded', 'simple_social_icons_load_textdomain' );
