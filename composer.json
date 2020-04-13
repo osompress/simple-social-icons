@@ -1,0 +1,32 @@
+{
+	"name": "studiopress/simple-social-icons",
+	"type": "wordpress-plugin",
+	"description": "A simple CSS and SVG driven social icons widget.",
+	"homepage": "https://github.com/studiopress/simple-social-icons",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": "^5.3 || ^7",
+		"composer/installers": "^1"
+	},
+	"require-dev": {
+		"php": "^5.6 || ^7",
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"squizlabs/php_codesniffer": "^3.3.1",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "^1"
+	},
+	"config": {
+		"sort-order": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"phpcs": "phpcs --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./",
+		"phpcs-compat": "phpcs --extensions=php --standard=PHPCompatibilityWP --ignore=vendor/,node_modules/,assets/ --runtime-set testVersion 5.6- -p ./",
+		"phpcbf": "phpcbf --standard=WordPress --ignore=vendor/,node_modules/,assets/ --extensions=php -p ./"
+	},
+	"support": {
+		"issues": "https://github.com/studiopress/simple-social-icons/issues",
+		"source": "https://github.com/studiopress/simple-social-icons"
+	}
+}

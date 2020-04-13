@@ -84,7 +84,7 @@ jobs:
       - attach_workspace:
           at: /tmp
       - install_dependencies
-      - run: composer phpcs
+#      - run: composer phpcs
 
   deploy_svn_branch:
     executor: base
