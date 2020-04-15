@@ -43,13 +43,13 @@ commands:
       - run:
           command: if [[ ! -z $(svn st | grep ^\!) ]]; then svn st | grep ^! | awk '{print " --force "$2}' | xargs -0r svn rm; fi
       - run: svn add --force .
+      - run: svn update
 
   svn_create_tag:
     description: "Create a SVN tag"
     steps:
       - set_verision_variable
       - run: svn cp trunk tags/${VERSION}
-      - run: svn update
 
   svn_commit:
     description: "Commit changes to SVN"
