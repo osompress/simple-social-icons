@@ -54,7 +54,6 @@ commands:
     description: "Commit changes to SVN"
     steps:
       - set_verision_variable
-      - run: svn update --depth=empty tags/${VERSION}
       - run: svn ci -m "Tagging ${VERSION} from Github" --no-auth-cache --non-interactive --username "${SVN_USERNAME}" --password "${SVN_PASSWORD}"
 
 executors:
@@ -94,7 +93,6 @@ jobs:
       - attach_workspace:
           at: /tmp
       - svn_setup
-      - svn_create_tag
       - svn_add_changes
       - svn_commit
 
