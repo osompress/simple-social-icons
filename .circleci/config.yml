@@ -49,6 +49,7 @@ commands:
     steps:
       - set_verision_variable
       - run: svn cp trunk tags/${VERSION}
+      - run: svn up tags --depth=empty tags
 
   svn_commit:
     description: "Commit changes to SVN"
