@@ -18,7 +18,7 @@ commands:
     steps:
       - run:
           command: |
-            echo "export VERSION=$(grep 'Version:' /tmp/src/simple-social-icons.php | awk -F: '{print $2}' | sed 's/^\s//')" >> ${BASH_ENV}
+            echo "export VERSION=$(git -C /tmp/src describe --tags --abbrev=0)" >> ${BASH_ENV}
 
   show_pwd_info:
     description: "Show information about the current directory"
@@ -84,7 +84,7 @@ jobs:
       - attach_workspace:
           at: /tmp
       - install_dependencies
-#      - run: composer phpcs
+      # - run: composer phpcs
 
   deploy_svn_branch:
     executor: base
@@ -93,6 +93,7 @@ jobs:
       - attach_workspace:
           at: /tmp
       - svn_setup
+      - svn_create_tag
       - svn_add_changes
       - svn_commit
 
