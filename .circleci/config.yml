@@ -43,7 +43,6 @@ commands:
       - run:
           command: if [[ ! -z $(svn st | grep ^\!) ]]; then svn st | grep ^! | awk '{print " --force "$2}' | xargs -0r svn rm; fi
       - run: svn add --force .
-      - run: svn update
 
   svn_create_tag:
     description: "Create a SVN tag"
@@ -55,6 +54,7 @@ commands:
     description: "Commit changes to SVN"
     steps:
       - set_verision_variable
+      - run: svn update --depth=empty tags/${VERSION}
       - run: svn ci -m "Tagging ${VERSION} from Github" --no-auth-cache --non-interactive --username "${SVN_USERNAME}" --password "${SVN_PASSWORD}"
 
 executors:
