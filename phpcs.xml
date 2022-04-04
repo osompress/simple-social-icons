@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress Coding Standards for Simple Social Icons">
-
 	<rule ref="WordPress">
 		<exclude name="WordPress.Files.FileName" />
 	</rule>
