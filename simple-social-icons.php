@@ -474,7 +474,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		if ( $output ) {
 			$output = str_replace( '{WIDGET_INSTANCE_ID}', $this->number, $output );
-			printf( '<ul class="%s">%s</ul>', esc_attr( $instance['alignment'] ), esc_html( $output ) );
+			printf( '<ul class="%s">%s</ul>', esc_attr( $instance['alignment'] ), $output ); // phpcs:ignore
 		}
 
 		echo $args['after_widget']; // phpcs:ignore
