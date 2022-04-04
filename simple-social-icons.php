@@ -23,6 +23,9 @@ function simple_social_icons_load_textdomain() {
 	load_plugin_textdomain( 'simple-social-icons', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
+/**
+ * The Simple Social Icons widget.
+ */
 class Simple_Social_Icons_Widget extends WP_Widget {
 
 	/**
@@ -72,7 +75,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Set some global values and create widget.
 	 */
-	function __construct() {
+	public function __construct() {
 
 		/**
 		 * Filter for default widget option values.
@@ -270,9 +273,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * Color Picker.
 	 *
 	 * Enqueue the color picker script.
+     *
+     * @param string $hook The current admin page.
 	 */
-	function load_color_picker( $hook ) {
-		if ( 'widgets.php' != $hook ) {
+	public function load_color_picker( $hook ) {
+		if ( 'widgets.php' !== $hook ) {
 			return;
 		}
 			wp_enqueue_style( 'wp-color-picker' );
@@ -285,7 +290,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Reference https://core.trac.wordpress.org/attachment/ticket/25809/color-picker-widget.php
 	 */
-	function print_scripts() {
+	public function print_scripts() {
 		?>
 		<script>
 			( function( $ ){
@@ -321,6 +326,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * Widget Form.
 	 *
 	 * Outputs the widget form that allows users to control the output of the widget.
+	 *
+	 * @param array $instance The widget settings.
 	 */
 	function form( $instance ) {
 
