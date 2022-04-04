@@ -16,7 +16,11 @@
 		"wp-coding-standards/wpcs": "^1"
 	},
 	"config": {
-		"sort-order": true
+		"sort-order": true,
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
