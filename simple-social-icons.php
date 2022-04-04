@@ -388,8 +388,12 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * Form validation and sanitization.
 	 *
 	 * Runs when you save the widget form. Allows you to validate or sanitize widget options before they are saved.
+	 *
+	 * @param array $newinstance The new settings.
+	 * @param array $oldinstance The old settings.
+	 * @return array The settings to save.
 	 */
-	function update( $newinstance, $oldinstance ) {
+	public function update( $newinstance, $oldinstance ) {
 
 		// Fields that can be transparent if their values are unset.
 		$can_be_transparent = array(
@@ -402,26 +406,20 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		foreach ( $newinstance as $key => $value ) {
 
 			/** Border radius and Icon size must not be empty, must be a digit */
-			if ( ( 'border_radius' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
+			if ( ( 'border_radius' === $key || 'size' === $key ) && ( '' === $value || ! ctype_digit( $value ) ) ) {
 				$newinstance[ $key ] = 0;
 			}
 
-			if ( ( 'border_width' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
+			if ( ( 'border_width' === $key || 'size' === $key ) && ( '' === $value || ! ctype_digit( $value ) ) ) {
 				$newinstance[ $key ] = 0;
-			}
-
-			/** Accept empty colors for permitted keys. */
-			elseif ( in_array( $key, $can_be_transparent, true ) && '' == trim( $value ) ) {
+			} elseif ( in_array( $key, $can_be_transparent, true ) && '' === trim( $value ) ) {
+				// Accept empty colors for permitted keys.
 				$newinstance[ $key ] = '';
-			}
-
-			/** Validate hex code colors */
-			elseif ( strpos( $key, '_color' ) && 0 == preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
+			} elseif ( strpos( $key, '_color' ) && 0 === preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
+				// Validate hex code colors.
 				$newinstance[ $key ] = $oldinstance[ $key ];
-			}
-
-			/** Sanitize Profile URIs */
-			elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) && ! 'phone' === $key ) {
+			} elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) && ! 'phone' === $key ) {
+				// Sanitize Profile URIs.
 				$newinstance[ $key ] = esc_url( $newinstance[ $key ] );
 			}
 		}
@@ -434,18 +432,19 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * Widget Output.
 	 *
 	 * Outputs the actual widget on the front-end based on the widget options the user selected.
+	 *
+	 * @param array $args The display args.
+	 * @param array $instance The instance settings.
 	 */
-	function widget( $args, $instance ) {
-
-		extract( $args );
+	public function widget( $args, $instance ) {
 
 		/** Merge with defaults */
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $before_widget;
+		echo $args['before_widget']; // phpcs:ignore
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title']; // phpcs:ignore
 		}
 
 			$output = '';
@@ -475,16 +474,19 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 
 		if ( $output ) {
 			$output = str_replace( '{WIDGET_INSTANCE_ID}', $this->number, $output );
-			printf( '<ul class="%s">%s</ul>', $instance['alignment'], $output );
+			printf( '<ul class="%s">%s</ul>', esc_attr( $instance['alignment'] ), esc_html( $output ) );
 		}
 
-		echo $after_widget;
+		echo $args['after_widget']; // phpcs:ignore
 
 		$this->active_instances[] = $this->number;
 
 	}
 
-	function enqueue_css() {
+	/**
+	 * Enqueues the CSS.
+	 */
+	public function enqueue_css() {
 
 		/**
 		 * Filter the plugin stylesheet location.
@@ -498,7 +500,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
 
 		if ( ! function_exists( 'is_amp_endpoint' ) || ( function_exists( 'is_amp_endpoint' ) && ! is_amp_endpoint() ) ) {
-			wp_enqueue_script( 'svg-x-use', plugin_dir_url( __FILE__ ) . 'svgxuse.js', array(), '1.1.21' );
+			wp_enqueue_script( 'svg-x-use', plugin_dir_url( __FILE__ ) . 'svgxuse.js', array(), '1.1.21', true );
 		}
 	}
 
@@ -507,7 +509,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Outputs custom CSS to control the look of the icons.
 	 */
-	function css() {
+	public function css() {
 
 		/** Pull widget settings, merge with defaults */
 		$all_instances = $this->get_settings();
@@ -561,22 +563,22 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$css = str_replace( "\t", '', $css );
 		$css = str_replace( array( "\n", "\r" ), ' ', $css );
 
-		echo '<style type="text/css" media="screen">' . $css . '</style>';
+		echo '<style type="text/css" media="screen">' . wp_strip_all_tags( $css ) . '</style>'; // phpcs:ignore
 
 	}
 
 	/**
 	 * Construct the markup for each icon
 	 *
-	 * @param string The lowercase icon name for use in tag attributes.
-	 * @param string The plain text icon label.
+	 * @param string $icon The lowercase icon name for use in tag attributes.
+	 * @param string $label The plain text icon label.
 	 *
 	 * @return string The full markup for the given icon.
 	 */
-	function get_icon_markup( $icon, $label ) {
-		$markup  = '<li class="ssi-' . $icon . '"><a href="%s" %s>';
-		$markup .= '<svg role="img" class="social-' . $icon . '" aria-labelledby="social-' . $icon . '-{WIDGET_INSTANCE_ID}">';
-		$markup .= '<title id="social-' . $icon . '-{WIDGET_INSTANCE_ID}' . '">' . $label . '</title>';
+	public function get_icon_markup( $icon, $label ) {
+		$markup  = '<li class="ssi-' . esc_attr( $icon ) . '"><a href="%s" %s>';
+		$markup .= '<svg role="img" class="social-' . esc_attr( $icon ) . '" aria-labelledby="social-' . esc_attr( $icon ) . '-{WIDGET_INSTANCE_ID}">';
+		$markup .= '<title id="social-' . esc_attr( $icon ) . '-{WIDGET_INSTANCE_ID}">' . esc_html( $label ) . '</title>';
 		$markup .= '<use xlink:href="' . esc_attr( plugin_dir_url( __FILE__ ) . 'symbol-defs.svg#social-' . $icon ) . '"></use>';
 		$markup .= '</svg></a></li>';
 
