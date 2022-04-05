@@ -63,7 +63,7 @@ executors:
     working_directory: /tmp
   php_node:
     docker:
-      - image: circleci/php:7.3.3-stretch-node-browsers
+      - image: cimg/php:7.3.3-node-browsers
     working_directory: /tmp/src
 
 jobs:
@@ -84,7 +84,7 @@ jobs:
       - attach_workspace:
           at: /tmp
       - install_dependencies
-      # - run: composer phpcs
+      - run: composer phpcs
 
   deploy_svn_branch:
     executor: base
