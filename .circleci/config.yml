@@ -63,7 +63,7 @@ executors:
     working_directory: /tmp
   php_node:
     docker:
-      - image: cimg/php:7.3.3-node-browsers
+      - image: cimg/php:7.3-node
     working_directory: /tmp/src
 
 jobs:
