@@ -5,13 +5,13 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: StudioPress
  * Author URI: https://www.studiopress.com/
- * Version: 3.0.2
+ * Version: 3.1.0
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
  * License: GNU General Public License v2.0 (or later)
  * License URI: https://www.opensource.org/licenses/gpl-license.php
- * 
+ *
  * @package simple-social-icons
  */
 
@@ -23,6 +23,9 @@ function simple_social_icons_load_textdomain() {
 	load_plugin_textdomain( 'simple-social-icons', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
+/**
+ * The Simple Social Icons widget.
+ */
 class Simple_Social_Icons_Widget extends WP_Widget {
 
 	/**
@@ -72,7 +75,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Set some global values and create widget.
 	 */
-	function __construct() {
+	public function __construct() {
 
 		/**
 		 * Filter for default widget option values.
@@ -81,42 +84,45 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 *
 		 * @param array $defaults Default widget options.
 		 */
-		$this->defaults = apply_filters( 'simple_social_default_styles', array(
-			'title'                  => '',
-			'new_window'             => 0,
-			'size'                   => 36,
-			'border_radius'          => 3,
-			'border_width'           => 0,
-			'border_color'           => '#ffffff',
-			'border_color_hover'     => '#ffffff',
-			'icon_color'             => '#ffffff',
-			'icon_color_hover'       => '#ffffff',
-			'background_color'       => '#999999',
-			'background_color_hover' => '#666666',
-			'alignment'              => 'alignleft',
-			'behance'                => '',
-			'bloglovin'              => '',
-			'dribbble'               => '',
-			'email'                  => '',
-			'facebook'               => '',
-			'flickr'                 => '',
-			'github'                 => '',
-			'gplus'                  => '',
-			'instagram'              => '',
-			'linkedin'               => '',
-			'medium'                 => '',
-			'periscope'              => '',
-			'phone'                  => '',
-			'pinterest'              => '',
-			'rss'                    => '',
-			'snapchat'               => '',
-			'stumbleupon'            => '',
-			'tumblr'                 => '',
-			'twitter'                => '',
-			'vimeo'                  => '',
-			'xing'                   => '',
-			'youtube'                => '',
-		) );
+		$this->defaults = apply_filters(
+			'simple_social_default_styles',
+			array(
+				'title'                  => '',
+				'new_window'             => 0,
+				'size'                   => 36,
+				'border_radius'          => 3,
+				'border_width'           => 0,
+				'border_color'           => '#ffffff',
+				'border_color_hover'     => '#ffffff',
+				'icon_color'             => '#ffffff',
+				'icon_color_hover'       => '#ffffff',
+				'background_color'       => '#999999',
+				'background_color_hover' => '#666666',
+				'alignment'              => 'alignleft',
+				'behance'                => '',
+				'bloglovin'              => '',
+				'dribbble'               => '',
+				'email'                  => '',
+				'facebook'               => '',
+				'flickr'                 => '',
+				'github'                 => '',
+				'gplus'                  => '',
+				'instagram'              => '',
+				'linkedin'               => '',
+				'medium'                 => '',
+				'periscope'              => '',
+				'phone'                  => '',
+				'pinterest'              => '',
+				'rss'                    => '',
+				'snapchat'               => '',
+				'stumbleupon'            => '',
+				'tumblr'                 => '',
+				'twitter'                => '',
+				'vimeo'                  => '',
+				'xing'                   => '',
+				'youtube'                => '',
+			)
+		);
 
 		/**
 		 * Filter for social profile choices.
@@ -125,96 +131,99 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 *
 		 * @param array $profiles Social icons to include in widget options.
 		 */
-		$this->profiles = apply_filters( 'simple_social_default_profiles', array(
-			'behance' => array(
-				'label'   => __( 'Behance URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'behance', __( 'Behance', 'simple-social-icons' ) ),
-			),
-			'bloglovin' => array(
-				'label'   => __( 'Bloglovin URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'bloglovin', __( 'Bloglovin', 'simple-social-icons' ) ),
-			),
-			'dribbble' => array(
-				'label'   => __( 'Dribbble URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'dribbble', __( 'Dribbble', 'simple-social-icons' ) ),
-			),
-			'email' => array(
-				'label'   => __( 'Email URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'email', __( 'Email', 'simple-social-icons' ) ),
-			),
-			'facebook' => array(
-				'label'   => __( 'Facebook URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'facebook', __( 'Facebook', 'simple-social-icons' ) ),
-			),
-			'flickr' => array(
-				'label'   => __( 'Flickr URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'flickr', __( 'Flickr', 'simple-social-icons' ) ),
-			),
-			'github' => array(
-				'label'   => __( 'GitHub URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'github', __( 'GitHub', 'simple-social-icons' ) ),
-			),
-			'gplus' => array(
-				'label'   => __( 'Google+ URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'gplus', __( 'Google+', 'simple-social-icons' ) ),
-			),
-			'instagram' => array(
-				'label'   => __( 'Instagram URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'instagram', __( 'Instagram', 'simple-social-icons' ) ),
-			),
-			'linkedin' => array(
-				'label'   => __( 'Linkedin URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'linkedin', __( 'LinkedIn', 'simple-social-icons' ) ),
-			),
-			'medium' => array(
-				'label'   => __( 'Medium URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'medium', __( 'Medium', 'simple-social-icons' ) ),
-			),
-			'periscope' => array(
-				'label'   => __( 'Periscope URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'periscope', __( 'Periscope', 'simple-social-icons' ) ),
-			),
-			'phone' => array(
-				'label'   => __( 'Phone URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'phone', __( 'Phone', 'simple-social-icons' ) ),
-			),
-			'pinterest' => array(
-				'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'pinterest', __( 'Pinterest', 'simple-social-icons' ) ),
-			),
-			'rss' => array(
-				'label'   => __( 'RSS URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'rss', __( 'RSS', 'simple-social-icons' ) ),
-			),
-			'snapchat' => array(
-				'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'snapchat', __( 'Snapchat', 'simple-social-icons' ) ),
-			),
-			'stumbleupon' => array(
-				'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'stumbleupon', __( 'StumbleUpon', 'simple-social-icons' ) ),
-			),
-			'tumblr' => array(
-				'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'tumblr', __( 'Tumblr', 'simple-social-icons' ) ),
-			),
-			'twitter' => array(
-				'label'   => __( 'Twitter URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'twitter', __( 'Twitter', 'simple-social-icons' ) ),
-			),
-			'vimeo' => array(
-				'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'vimeo', __( 'Vimeo', 'simple-social-icons' ) ),
-			),
-			'xing' => array(
-				'label'   => __( 'Xing URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'xing', __( 'xing', 'simple-social-icons' ) ),
-			),
-			'youtube' => array(
-				'label'   => __( 'YouTube URI', 'simple-social-icons' ),
-				'pattern' => $this->get_icon_markup( 'youtube', __( 'YouTube', 'simple-social-icons' ) ),
-			),
-		) );
+		$this->profiles = apply_filters(
+			'simple_social_default_profiles',
+			array(
+				'behance'     => array(
+					'label'   => __( 'Behance URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'behance', __( 'Behance', 'simple-social-icons' ) ),
+				),
+				'bloglovin'   => array(
+					'label'   => __( 'Bloglovin URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'bloglovin', __( 'Bloglovin', 'simple-social-icons' ) ),
+				),
+				'dribbble'    => array(
+					'label'   => __( 'Dribbble URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'dribbble', __( 'Dribbble', 'simple-social-icons' ) ),
+				),
+				'email'       => array(
+					'label'   => __( 'Email URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'email', __( 'Email', 'simple-social-icons' ) ),
+				),
+				'facebook'    => array(
+					'label'   => __( 'Facebook URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'facebook', __( 'Facebook', 'simple-social-icons' ) ),
+				),
+				'flickr'      => array(
+					'label'   => __( 'Flickr URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'flickr', __( 'Flickr', 'simple-social-icons' ) ),
+				),
+				'github'      => array(
+					'label'   => __( 'GitHub URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'github', __( 'GitHub', 'simple-social-icons' ) ),
+				),
+				'gplus'       => array(
+					'label'   => __( 'Google+ URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'gplus', __( 'Google+', 'simple-social-icons' ) ),
+				),
+				'instagram'   => array(
+					'label'   => __( 'Instagram URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'instagram', __( 'Instagram', 'simple-social-icons' ) ),
+				),
+				'linkedin'    => array(
+					'label'   => __( 'Linkedin URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'linkedin', __( 'LinkedIn', 'simple-social-icons' ) ),
+				),
+				'medium'      => array(
+					'label'   => __( 'Medium URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'medium', __( 'Medium', 'simple-social-icons' ) ),
+				),
+				'periscope'   => array(
+					'label'   => __( 'Periscope URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'periscope', __( 'Periscope', 'simple-social-icons' ) ),
+				),
+				'phone'       => array(
+					'label'   => __( 'Phone URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'phone', __( 'Phone', 'simple-social-icons' ) ),
+				),
+				'pinterest'   => array(
+					'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'pinterest', __( 'Pinterest', 'simple-social-icons' ) ),
+				),
+				'rss'         => array(
+					'label'   => __( 'RSS URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'rss', __( 'RSS', 'simple-social-icons' ) ),
+				),
+				'snapchat'    => array(
+					'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'snapchat', __( 'Snapchat', 'simple-social-icons' ) ),
+				),
+				'stumbleupon' => array(
+					'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'stumbleupon', __( 'StumbleUpon', 'simple-social-icons' ) ),
+				),
+				'tumblr'      => array(
+					'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'tumblr', __( 'Tumblr', 'simple-social-icons' ) ),
+				),
+				'twitter'     => array(
+					'label'   => __( 'Twitter URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'twitter', __( 'Twitter', 'simple-social-icons' ) ),
+				),
+				'vimeo'       => array(
+					'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'vimeo', __( 'Vimeo', 'simple-social-icons' ) ),
+				),
+				'xing'        => array(
+					'label'   => __( 'Xing URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'xing', __( 'xing', 'simple-social-icons' ) ),
+				),
+				'youtube'     => array(
+					'label'   => __( 'YouTube URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'youtube', __( 'YouTube', 'simple-social-icons' ) ),
+				),
+			)
+		);
 
 		/**
 		 * Filter to disable output of custom CSS.
@@ -265,10 +274,12 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Enqueue the color picker script.
 	 *
+	 * @param string $hook The current admin page.
 	 */
-	function load_color_picker( $hook ) {
-		if( 'widgets.php' != $hook )
+	public function load_color_picker( $hook ) {
+		if ( 'widgets.php' !== $hook ) {
 			return;
+		}
 			wp_enqueue_style( 'wp-color-picker' );
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_script( 'underscore' );
@@ -278,9 +289,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 * Print scripts.
 	 *
 	 * Reference https://core.trac.wordpress.org/attachment/ticket/25809/color-picker-widget.php
-	 *
 	 */
-	function print_scripts() {
+	public function print_scripts() {
 		?>
 		<script>
 			( function( $ ){
@@ -317,47 +327,48 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Outputs the widget form that allows users to control the output of the widget.
 	 *
+	 * @param array $instance The widget settings.
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		/** Merge with defaults */
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		?>
 
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'simple-social-icons' ); ?></label> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
+		<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'simple-social-icons' ); ?></label> <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
 
-		<p><label><input id="<?php echo $this->get_field_id( 'new_window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new_window' ); ?>" value="1" <?php checked( 1, $instance['new_window'] ); ?>/> <?php esc_html_e( 'Open links in new window?', 'simple-social-icons' ); ?></label></p>
+		<p><label><input id="<?php echo esc_attr( $this->get_field_id( 'new_window' ) ); ?>" type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'new_window' ) ); ?>" value="1" <?php checked( 1, $instance['new_window'] ); ?>/> <?php esc_html_e( 'Open links in new window?', 'simple-social-icons' ); ?></label></p>
 
 		<?php if ( ! $this->disable_css_output ) { ?>
 
-			<p><label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php _e( 'Icon Size', 'simple-social-icons' ); ?>:</label> <input id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>" type="text" value="<?php echo esc_attr( $instance['size'] ); ?>" size="3" />px</p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Icon Size', 'simple-social-icons' ); ?>:</label> <input id="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['size'] ); ?>" size="3" />px</p>
 
-			<p><label for="<?php echo $this->get_field_id( 'border_radius' ); ?>"><?php _e( 'Icon Border Radius:', 'simple-social-icons' ); ?></label> <input id="<?php echo $this->get_field_id( 'border_radius' ); ?>" name="<?php echo $this->get_field_name( 'border_radius' ); ?>" type="text" value="<?php echo esc_attr( $instance['border_radius'] ); ?>" size="3" />px</p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'border_radius' ) ); ?>"><?php esc_html_e( 'Icon Border Radius:', 'simple-social-icons' ); ?></label> <input id="<?php echo esc_attr( $this->get_field_id( 'border_radius' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'border_radius' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['border_radius'] ); ?>" size="3" />px</p>
 
-			<p><label for="<?php echo $this->get_field_id( 'border_width' ); ?>"><?php _e( 'Border Width:', 'simple-social-icons' ); ?></label> <input id="<?php echo $this->get_field_id( 'border_width' ); ?>" name="<?php echo $this->get_field_name( 'border_width' ); ?>" type="text" value="<?php echo esc_attr( $instance['border_width'] ); ?>" size="3" />px</p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'border_width' ) ); ?>"><?php esc_html_e( 'Border Width:', 'simple-social-icons' ); ?></label> <input id="<?php echo esc_attr( $this->get_field_id( 'border_width' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'border_width' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['border_width'] ); ?>" size="3" />px</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'alignment' ); ?>"><?php _e( 'Alignment', 'simple-social-icons' ); ?>:</label>
-				<select id="<?php echo $this->get_field_id( 'alignment' ); ?>" name="<?php echo $this->get_field_name( 'alignment' ); ?>">
-					<option value="alignleft" <?php selected( 'alignright', $instance['alignment'] ) ?>><?php _e( 'Align Left', 'simple-social-icons' ); ?></option>
-					<option value="aligncenter" <?php selected( 'aligncenter', $instance['alignment'] ) ?>><?php _e( 'Align Center', 'simple-social-icons' ); ?></option>
-					<option value="alignright" <?php selected( 'alignright', $instance['alignment'] ) ?>><?php _e( 'Align Right', 'simple-social-icons' ); ?></option>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'alignment' ) ); ?>"><?php esc_html_e( 'Alignment', 'simple-social-icons' ); ?>:</label>
+				<select id="<?php echo esc_attr( $this->get_field_id( 'alignment' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'alignment' ) ); ?>">
+					<option value="alignleft" <?php selected( 'alignright', $instance['alignment'] ); ?>><?php esc_html_e( 'Align Left', 'simple-social-icons' ); ?></option>
+					<option value="aligncenter" <?php selected( 'aligncenter', $instance['alignment'] ); ?>><?php esc_html_e( 'Align Center', 'simple-social-icons' ); ?></option>
+					<option value="alignright" <?php selected( 'alignright', $instance['alignment'] ); ?>><?php esc_html_e( 'Align Right', 'simple-social-icons' ); ?></option>
 				</select>
 			</p>
 
 			<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
 
-			<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Icon Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'icon_color' ); ?>" name="<?php echo $this->get_field_name( 'icon_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color'] ); ?>" value="<?php echo esc_attr( $instance['icon_color'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"><?php esc_html_e( 'Icon Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'icon_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'icon_color' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color'] ); ?>" value="<?php echo esc_attr( $instance['icon_color'] ); ?>" size="6" /></p>
 
-			<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Icon Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'icon_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'icon_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['icon_color_hover'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'background_color_hover' ) ); ?>"><?php esc_html_e( 'Icon Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'icon_color_hover' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'icon_color_hover' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['icon_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['icon_color_hover'] ); ?>" size="6" /></p>
 
-			<p><label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Background Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color'] ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"><?php esc_html_e( 'Background Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color'] ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" size="6" /></p>
 
-			<p><label for="<?php echo $this->get_field_id( 'background_color_hover' ); ?>"><?php _e( 'Background Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'background_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'background_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['background_color_hover'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'background_color_hover' ) ); ?>"><?php esc_html_e( 'Background Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'background_color_hover' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'background_color_hover' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['background_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['background_color_hover'] ); ?>" size="6" /></p>
 
-			<p><label for="<?php echo $this->get_field_id( 'border_color' ); ?>"><?php _e( 'Border Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'border_color' ); ?>" name="<?php echo $this->get_field_name( 'border_color' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color'] ); ?>" value="<?php echo esc_attr( $instance['border_color'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'border_color' ) ); ?>"><?php esc_html_e( 'Border Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'border_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'border_color' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color'] ); ?>" value="<?php echo esc_attr( $instance['border_color'] ); ?>" size="6" /></p>
 
-			<p><label for="<?php echo $this->get_field_id( 'border_color_hover' ); ?>"><?php _e( 'Border Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo $this->get_field_id( 'border_color_hover' ); ?>" name="<?php echo $this->get_field_name( 'border_color_hover' ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['border_color_hover'] ); ?>" size="6" /></p>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'border_color_hover' ) ); ?>"><?php esc_html_e( 'Border Hover Color:', 'simple-social-icons' ); ?></label><br /> <input id="<?php echo esc_attr( $this->get_field_id( 'border_color_hover' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'border_color_hover' ) ); ?>" type="text" class="ssiw-color-picker" data-default-color="<?php echo esc_attr( $this->defaults['border_color_hover'] ); ?>" value="<?php echo esc_attr( $instance['border_color_hover'] ); ?>" size="6" /></p>
 
 			<hr style="background: #ccc; border: 0; height: 1px; margin: 20px 0;" />
 		<?php } ?>
@@ -366,7 +377,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		foreach ( (array) $this->profiles as $profile => $data ) {
 
 			printf( '<p><label for="%s">%s:</label></p>', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $data['label'] ) );
-			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), $instance[ $profile ] );
+			printf( '<p><input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $profile ) ), esc_attr( $this->get_field_name( $profile ) ), esc_attr( $instance[ $profile ] ) );
 			printf( '</p>' );
 
 		}
@@ -378,8 +389,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Runs when you save the widget form. Allows you to validate or sanitize widget options before they are saved.
 	 *
+	 * @param array $newinstance The new settings.
+	 * @param array $oldinstance The old settings.
+	 * @return array The settings to save.
 	 */
-	function update( $newinstance, $oldinstance ) {
+	public function update( $newinstance, $oldinstance ) {
 
 		// Fields that can be transparent if their values are unset.
 		$can_be_transparent = array(
@@ -392,26 +406,20 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		foreach ( $newinstance as $key => $value ) {
 
 			/** Border radius and Icon size must not be empty, must be a digit */
-			if ( ( 'border_radius' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
+			if ( ( 'border_radius' === $key || 'size' === $key ) && ( '' === $value || ! ctype_digit( $value ) ) ) {
 				$newinstance[ $key ] = 0;
 			}
 
-			if ( ( 'border_width' == $key || 'size' == $key ) && ( '' == $value || ! ctype_digit( $value ) ) ) {
+			if ( ( 'border_width' === $key || 'size' === $key ) && ( '' === $value || ! ctype_digit( $value ) ) ) {
 				$newinstance[ $key ] = 0;
-			}
-
-			/** Accept empty colors for permitted keys. */
-			elseif ( in_array( $key, $can_be_transparent, true ) && '' == trim( $value ) ) {
+			} elseif ( in_array( $key, $can_be_transparent, true ) && '' === trim( $value ) ) {
+				// Accept empty colors for permitted keys.
 				$newinstance[ $key ] = '';
-			}
-
-			/** Validate hex code colors */
-			elseif ( strpos( $key, '_color' ) && 0 == preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
+			} elseif ( strpos( $key, '_color' ) && 0 === preg_match( '/^#(([a-fA-F0-9]{3}$)|([a-fA-F0-9]{6}$))/', $value ) ) {
+				// Validate hex code colors.
 				$newinstance[ $key ] = $oldinstance[ $key ];
-			}
-
-			/** Sanitize Profile URIs */
-			elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) && ! 'phone' === $key ) {
+			} elseif ( array_key_exists( $key, (array) $this->profiles ) && ! is_email( $value ) && ! 'phone' === $key ) {
+				// Sanitize Profile URIs.
 				$newinstance[ $key ] = esc_url( $newinstance[ $key ] );
 			}
 		}
@@ -425,55 +433,60 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Outputs the actual widget on the front-end based on the widget options the user selected.
 	 *
+	 * @param array $args The display args.
+	 * @param array $instance The instance settings.
 	 */
-	function widget( $args, $instance ) {
-
-		extract( $args );
+	public function widget( $args, $instance ) {
 
 		/** Merge with defaults */
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $before_widget;
+		echo $args['before_widget']; // phpcs:ignore
 
-			if ( ! empty( $instance['title'] ) )
-				echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title']; // phpcs:ignore
+		}
 
 			$output = '';
 
 			$profiles = (array) $this->profiles;
 
-			foreach ( $profiles as $profile => $data ) {
+		foreach ( $profiles as $profile => $data ) {
 
-				if ( empty( $instance[ $profile ] ) )
-					continue;
-
-				$new_window = $instance['new_window'] ? 'target="_blank" rel="noopener noreferrer"' : '';
-
-				if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) )
-					$new_window = '';
-
-				if ( is_email( $instance[ $profile ] ) ) {
-					$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
-				} elseif ( 'phone' === $profile ) {
-					$output .= sprintf( $data['pattern'], 'tel:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
-				} else {
-					$output .= sprintf( $data['pattern'], esc_url( $instance[ $profile ] ), $new_window );
-				}
-
+			if ( empty( $instance[ $profile ] ) ) {
+				continue;
 			}
 
-			if ( $output ) {
-				$output = str_replace( '{WIDGET_INSTANCE_ID}', $this->number, $output );
-				printf( '<ul class="%s">%s</ul>', $instance['alignment'], $output );
+			$new_window = $instance['new_window'] ? 'target="_blank" rel="noopener noreferrer"' : '';
+
+			if ( is_email( $instance[ $profile ] ) || false !== strpos( $instance[ $profile ], 'mailto:' ) ) {
+				$new_window = '';
 			}
 
-		echo $after_widget;
+			if ( is_email( $instance[ $profile ] ) ) {
+				$output .= sprintf( $data['pattern'], 'mailto:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
+			} elseif ( 'phone' === $profile ) {
+				$output .= sprintf( $data['pattern'], 'tel:' . esc_attr( antispambot( $instance[ $profile ] ) ), $new_window );
+			} else {
+				$output .= sprintf( $data['pattern'], esc_url( $instance[ $profile ] ), $new_window );
+			}
+		}
+
+		if ( $output ) {
+			$output = str_replace( '{WIDGET_INSTANCE_ID}', $this->number, $output );
+			printf( '<ul class="%s">%s</ul>', esc_attr( $instance['alignment'] ), $output ); // phpcs:ignore
+		}
+
+		echo $args['after_widget']; // phpcs:ignore
 
 		$this->active_instances[] = $this->number;
 
 	}
 
-	function enqueue_css() {
+	/**
+	 * Enqueues the CSS.
+	 */
+	public function enqueue_css() {
 
 		/**
 		 * Filter the plugin stylesheet location.
@@ -487,7 +500,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
 
 		if ( ! function_exists( 'is_amp_endpoint' ) || ( function_exists( 'is_amp_endpoint' ) && ! is_amp_endpoint() ) ) {
-			wp_enqueue_script('svg-x-use', plugin_dir_url(__FILE__) . 'svgxuse.js', array(), '1.1.21' );
+			wp_enqueue_script( 'svg-x-use', plugin_dir_url( __FILE__ ) . 'svgxuse.js', array(), '1.1.21', true );
 		}
 	}
 
@@ -496,7 +509,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 	 *
 	 * Outputs custom CSS to control the look of the icons.
 	 */
-	function css() {
+	public function css() {
 
 		/** Pull widget settings, merge with defaults */
 		$all_instances = $this->get_settings();
@@ -550,22 +563,22 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$css = str_replace( "\t", '', $css );
 		$css = str_replace( array( "\n", "\r" ), ' ', $css );
 
-		echo '<style type="text/css" media="screen">' . $css . '</style>';
+		echo '<style type="text/css" media="screen">' . wp_strip_all_tags( $css ) . '</style>'; // phpcs:ignore
 
 	}
 
 	/**
 	 * Construct the markup for each icon
 	 *
-	 * @param string The lowercase icon name for use in tag attributes.
-	 * @param string The plain text icon label.
+	 * @param string $icon The lowercase icon name for use in tag attributes.
+	 * @param string $label The plain text icon label.
 	 *
 	 * @return string The full markup for the given icon.
 	 */
-	function get_icon_markup( $icon, $label ) {
-		$markup = '<li class="ssi-' . $icon . '"><a href="%s" %s>';
-		$markup .= '<svg role="img" class="social-' . $icon . '" aria-labelledby="social-' . $icon . '-{WIDGET_INSTANCE_ID}">';
-		$markup .= '<title id="social-' . $icon . '-{WIDGET_INSTANCE_ID}' . '">' . $label . '</title>';
+	public function get_icon_markup( $icon, $label ) {
+		$markup  = '<li class="ssi-' . esc_attr( $icon ) . '"><a href="%s" %s>';
+		$markup .= '<svg role="img" class="social-' . esc_attr( $icon ) . '" aria-labelledby="social-' . esc_attr( $icon ) . '-{WIDGET_INSTANCE_ID}">';
+		$markup .= '<title id="social-' . esc_attr( $icon ) . '-{WIDGET_INSTANCE_ID}">' . esc_html( $label ) . '</title>';
 		$markup .= '<use xlink:href="' . esc_attr( plugin_dir_url( __FILE__ ) . 'symbol-defs.svg#social-' . $icon ) . '"></use>';
 		$markup .= '</svg></a></li>';
 
@@ -599,7 +612,6 @@ add_action( 'widgets_init', 'ssiw_load_widget' );
  * Widget Registration.
  *
  * Register Simple Social Icons widget.
- *
  */
 function ssiw_load_widget() {
 

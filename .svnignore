@@ -1,6 +1,7 @@
 .git
 .gitignore
 .gitattributes
+.phpcs.xml
 .svnignore
 node_modules
 .circleci
