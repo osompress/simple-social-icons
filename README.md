@@ -67,6 +67,10 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 == Changelog ==
 
+= 3.1.0 =
+* Add escaping to output
+* Remove the svgxuse.js script
+
 = 3.0.0 =
 * Obfuscate email address from spambots
 * Prevent email links to open in new window if option selected
