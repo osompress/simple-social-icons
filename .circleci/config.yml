@@ -47,8 +47,12 @@ commands:
     description: "Add changes to SVN"
     steps:
       - run:
-          command: if [[ ! -z $(svn st | grep ^\!) ]]; then svn st | grep ^! | awk '{print " --force "$2}' | xargs -0r svn rm; fi
-      - run: svn add --force .
+          command: |
+            SVN_DIRECTORIES="trunk tags"
+            svn stat $SVN_DIRECTORIES | { grep -E '^\?' || true; } | awk '{print $2}' | xargs -r svn add
+            svn stat $SVN_DIRECTORIES | { grep -E '^\!' || true; } | awk '{print $2}' | xargs -r svn rm
+            echo "Here is the svn stat about to be checked in:"
+            svn stat
 
   svn_create_tag:
     description: "Create a SVN tag"
