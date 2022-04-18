@@ -13,12 +13,18 @@ commands:
           command: |
             [ ! -d "/tmp/artifacts" ] && mkdir /tmp/artifacts &>/dev/null
 
-  set_verision_variable:
+  set_version_variable:
     description: "Set the VERSION environment variable"
     steps:
       - run:
           command: |
-            echo "export VERSION=$(grep 'Version:' /tmp/src/simple-social-icons.php | awk -F: '{print $2}' | sed 's/^\s//')" >> ${BASH_ENV}
+            PLUGIN_VERSION=$(grep 'Version:' /tmp/src/simple-social-icons.php | awk -F: '{print $2}' | sed 's/^\s//')
+            if [ ! $PLUGIN_VERSION ]
+              then
+              echo "Didn't find a version of the plugin"
+              exit 1
+            fi
+            echo "export VERSION=$PLUGIN_VERSION" >> ${BASH_ENV}
 
   show_pwd_info:
     description: "Show information about the current directory"
@@ -41,19 +47,22 @@ commands:
     description: "Add changes to SVN"
     steps:
       - run:
-          command: if [[ ! -z $(svn st | grep ^\!) ]]; then svn st | grep ^! | awk '{print " --force "$2}' | xargs -0r svn rm; fi
-      - run: svn add --force .
+          command: |
+            svn stat | { grep -E '^\?' || true; } | awk '{print $2}' | xargs -r svn add
+            svn stat | { grep -E '^\!' || true; } | awk '{print $2}' | xargs -r svn rm
+            echo "Here is the svn stat about to be checked in:"
+            svn stat --verbose
 
   svn_create_tag:
     description: "Create a SVN tag"
     steps:
-      - set_verision_variable
+      - set_version_variable
       - run: svn cp trunk tags/${VERSION}
 
   svn_commit:
     description: "Commit changes to SVN"
     steps:
-      - set_verision_variable
+      - set_version_variable
       - run: svn ci -m "Tagging ${VERSION} from Github" --no-auth-cache --non-interactive --username "${SVN_USERNAME}" --password "${SVN_PASSWORD}"
 
 executors:

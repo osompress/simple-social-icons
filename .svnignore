@@ -1,7 +1,9 @@
 .git
 .gitignore
 .gitattributes
-.phpcs.xml
 .svnignore
 node_modules
 .circleci
+phpcs.xml
+composer.json
+composer.lock
