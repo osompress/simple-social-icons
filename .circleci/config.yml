@@ -60,12 +60,6 @@ commands:
       - set_version_variable
       - run: svn cp trunk tags/${VERSION}
 
-  svn_commit:
-    description: "Commit changes to SVN"
-    steps:
-      - set_version_variable
-      - run: svn ci -m "Tagging ${VERSION} from Github" --no-auth-cache --non-interactive --username "${SVN_USERNAME}" --password "${SVN_PASSWORD}"
-
 executors:
   base:
     docker:
@@ -104,7 +98,6 @@ jobs:
           at: /tmp
       - svn_setup
       - svn_add_changes
-      - svn_commit
 
   deploy_svn_tag:
     executor: base
@@ -115,7 +108,6 @@ jobs:
       - svn_setup
       - svn_create_tag
       - svn_add_changes
-      - svn_commit
 
 workflows:
   version: 2
