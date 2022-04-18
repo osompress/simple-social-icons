@@ -54,11 +54,7 @@ commands:
     description: "Create a SVN tag"
     steps:
       - set_version_variable
-      - run:
-          command: |
-            svn up tags/${VERSION}
-            svn rm tags/${VERSION} &>/dev/null
-            svn cp trunk tags/${VERSION}
+      - run: svn cp trunk tags/${VERSION}
 
   svn_commit:
     description: "Commit changes to SVN"
