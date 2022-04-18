@@ -51,7 +51,7 @@ commands:
             svn stat | { grep -E '^\?' || true; } | awk '{print $2}' | xargs -r svn add
             svn stat | { grep -E '^\!' || true; } | awk '{print $2}' | xargs -r svn rm
             echo "Here is the svn stat about to be checked in:"
-            svn stat
+            svn stat --verbose
 
   svn_create_tag:
     description: "Create a SVN tag"
