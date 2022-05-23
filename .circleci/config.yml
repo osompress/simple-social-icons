@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  wp-svn: studiopress/wp-svn@0.1
+
 commands:
   install_dependencies:
     description: "Install development dependencies."
@@ -68,7 +71,7 @@ commands:
 executors:
   base:
     docker:
-      - image: circleci/buildpack-deps:latest
+      - image: cimg/base:current
     working_directory: /tmp
   php_node:
     docker:
@@ -132,6 +135,19 @@ workflows:
             branches:
               ignore:
                 - master
+      - approval-for-deploy-tested-up-to-bump:
+          type: approval
+          requires:
+            - checks
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: /^bump-tested-up-to.*/
+      - wp-svn/deploy-tested-up-to-bump:
+          context: genesis-svn
+          requires:
+            - approval-for-deploy-tested-up-to-bump
 
   branch_deploy:
     jobs:
