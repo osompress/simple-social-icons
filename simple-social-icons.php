@@ -116,6 +116,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'rss'                    => '',
 				'snapchat'               => '',
 				'stumbleupon'            => '',
+				'tiktok'                 => '',
 				'tumblr'                 => '',
 				'twitter'                => '',
 				'vimeo'                  => '',
