@@ -203,6 +203,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'stumbleupon', __( 'StumbleUpon', 'simple-social-icons' ) ),
 				),
+				'tiktok'      => array(
+					'label'   => __( 'TikTok URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'tiktok', __( 'TikTok', 'simple-social-icons' ) ),
+				),
 				'tumblr'      => array(
 					'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'tumblr', __( 'Tumblr', 'simple-social-icons' ) ),
