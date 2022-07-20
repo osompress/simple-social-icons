@@ -162,10 +162,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'GitHub URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'github', __( 'GitHub', 'simple-social-icons' ) ),
 				),
-				'gplus'       => array(
-					'label'   => __( 'Google+ URI', 'simple-social-icons' ),
-					'pattern' => $this->get_icon_markup( 'gplus', __( 'Google+', 'simple-social-icons' ) ),
-				),
 				'instagram'   => array(
 					'label'   => __( 'Instagram URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'instagram', __( 'Instagram', 'simple-social-icons' ) ),
