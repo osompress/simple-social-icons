@@ -106,7 +106,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'facebook'               => '',
 				'flickr'                 => '',
 				'github'                 => '',
-				'gplus'                  => '',
 				'instagram'              => '',
 				'linkedin'               => '',
 				'medium'                 => '',
