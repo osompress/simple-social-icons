@@ -114,6 +114,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'periscope'              => '',
 				'phone'                  => '',
 				'pinterest'              => '',
+				'reddit'                 => '',
 				'rss'                    => '',
 				'snapchat'               => '',
 				'stumbleupon'            => '',
@@ -195,6 +196,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'pinterest'   => array(
 					'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'pinterest', __( 'Pinterest', 'simple-social-icons' ) ),
+				),
+				'reddit'      => array(
+					'label'   => __( 'Reddit URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'reddit', __( 'Reddit', 'simple-social-icons' ) ),
 				),
 				'rss'         => array(
 					'label'   => __( 'RSS URI', 'simple-social-icons' ),
