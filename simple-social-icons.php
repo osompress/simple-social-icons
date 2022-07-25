@@ -106,6 +106,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'facebook'               => '',
 				'flickr'                 => '',
 				'github'                 => '',
+				'goodreads'              => '',
 				'instagram'              => '',
 				'linkedin'               => '',
 				'medium'                 => '',
@@ -161,6 +162,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'github'      => array(
 					'label'   => __( 'GitHub URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'github', __( 'GitHub', 'simple-social-icons' ) ),
+				),
+				'goodreads'   => array(
+					'label'   => __( 'Goodreads URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'goodreads', __( 'Goodreads', 'simple-social-icons' ) ),
 				),
 				'instagram'   => array(
 					'label'   => __( 'Instagram URI', 'simple-social-icons' ),
