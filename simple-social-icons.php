@@ -99,6 +99,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'background_color'       => '#999999',
 				'background_color_hover' => '#666666',
 				'alignment'              => 'alignleft',
+				'amazon'                 => '',
 				'behance'                => '',
 				'bloglovin'              => '',
 				'dribbble'               => '',
@@ -135,6 +136,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$this->profiles = apply_filters(
 			'simple_social_default_profiles',
 			array(
+				'amazon'      => array(
+					'label'   => __( 'Amazon URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'amazon', __( 'Amazon', 'simple-social-icons' ) ),
+				),
 				'behance'     => array(
 					'label'   => __( 'Behance URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'behance', __( 'Behance', 'simple-social-icons' ) ),
