@@ -99,6 +99,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'background_color'       => '#999999',
 				'background_color_hover' => '#666666',
 				'alignment'              => 'alignleft',
+				'amazon'                 => '',
 				'behance'                => '',
 				'bloglovin'              => '',
 				'dribbble'               => '',
@@ -106,16 +107,19 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'facebook'               => '',
 				'flickr'                 => '',
 				'github'                 => '',
+				'goodreads'              => '',
 				'instagram'              => '',
 				'linkedin'               => '',
 				'medium'                 => '',
 				'periscope'              => '',
 				'phone'                  => '',
 				'pinterest'              => '',
+				'reddit'                 => '',
 				'rss'                    => '',
 				'snapchat'               => '',
 				'stumbleupon'            => '',
 				'tiktok'                 => '',
+				'tripadvisor'            => '',
 				'tumblr'                 => '',
 				'twitter'                => '',
 				'vimeo'                  => '',
@@ -134,6 +138,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		$this->profiles = apply_filters(
 			'simple_social_default_profiles',
 			array(
+				'amazon'      => array(
+					'label'   => __( 'Amazon URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'amazon', __( 'Amazon', 'simple-social-icons' ) ),
+				),
 				'behance'     => array(
 					'label'   => __( 'Behance URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'behance', __( 'Behance', 'simple-social-icons' ) ),
@@ -162,6 +170,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'GitHub URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'github', __( 'GitHub', 'simple-social-icons' ) ),
 				),
+				'goodreads'   => array(
+					'label'   => __( 'Goodreads URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'goodreads', __( 'Goodreads', 'simple-social-icons' ) ),
+				),
 				'instagram'   => array(
 					'label'   => __( 'Instagram URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'instagram', __( 'Instagram', 'simple-social-icons' ) ),
@@ -186,6 +198,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'Pinterest URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'pinterest', __( 'Pinterest', 'simple-social-icons' ) ),
 				),
+				'reddit'      => array(
+					'label'   => __( 'Reddit URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'reddit', __( 'Reddit', 'simple-social-icons' ) ),
+				),
 				'rss'         => array(
 					'label'   => __( 'RSS URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'rss', __( 'RSS', 'simple-social-icons' ) ),
@@ -201,6 +217,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'tiktok'      => array(
 					'label'   => __( 'TikTok URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'tiktok', __( 'TikTok', 'simple-social-icons' ) ),
+				),
+				'tripadvisor' => array(
+					'label'   => __( 'Tripadvisor URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'tripadvisor', __( 'Tripadvisor', 'simple-social-icons' ) ),
 				),
 				'tumblr'      => array(
 					'label'   => __( 'Tumblr URI', 'simple-social-icons' ),
