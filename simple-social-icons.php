@@ -118,7 +118,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'reddit'                 => '',
 				'rss'                    => '',
 				'snapchat'               => '',
-				'stumbleupon'            => '',
 				'tiktok'                 => '',
 				'tripadvisor'            => '',
 				'tumblr'                 => '',
@@ -215,10 +214,6 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'snapchat'    => array(
 					'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'snapchat', __( 'Snapchat', 'simple-social-icons' ) ),
-				),
-				'stumbleupon' => array(
-					'label'   => __( 'StumbleUpon URI', 'simple-social-icons' ),
-					'pattern' => $this->get_icon_markup( 'stumbleupon', __( 'StumbleUpon', 'simple-social-icons' ) ),
 				),
 				'tiktok'      => array(
 					'label'   => __( 'TikTok URI', 'simple-social-icons' ),
