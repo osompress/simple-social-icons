@@ -111,6 +111,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'instagram'              => '',
 				'linkedin'               => '',
 				'medium'                 => '',
+				'meetup'                 => '',
 				'periscope'              => '',
 				'phone'                  => '',
 				'pinterest'              => '',
@@ -186,6 +187,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'medium'      => array(
 					'label'   => __( 'Medium URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'medium', __( 'Medium', 'simple-social-icons' ) ),
+				),
+				'meetup'      => array(
+					'label'   => __( 'Meetup URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'meetup', __( 'Meetup', 'simple-social-icons' ) ),
 				),
 				'periscope'   => array(
 					'label'   => __( 'Periscope URI', 'simple-social-icons' ),
