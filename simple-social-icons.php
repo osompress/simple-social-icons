@@ -111,6 +111,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'instagram'              => '',
 				'linkedin'               => '',
 				'medium'                 => '',
+				'meetup'                 => '',
 				'periscope'              => '',
 				'phone'                  => '',
 				'pinterest'              => '',
@@ -123,6 +124,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'tumblr'                 => '',
 				'twitter'                => '',
 				'vimeo'                  => '',
+				'whatsapp'               => '',
 				'xing'                   => '',
 				'youtube'                => '',
 			)
@@ -186,6 +188,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'Medium URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'medium', __( 'Medium', 'simple-social-icons' ) ),
 				),
+				'meetup'      => array(
+					'label'   => __( 'Meetup URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'meetup', __( 'Meetup', 'simple-social-icons' ) ),
+				),
 				'periscope'   => array(
 					'label'   => __( 'Periscope URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'periscope', __( 'Periscope', 'simple-social-icons' ) ),
@@ -233,6 +239,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'vimeo'       => array(
 					'label'   => __( 'Vimeo URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'vimeo', __( 'Vimeo', 'simple-social-icons' ) ),
+				),
+				'whatsapp'    => array(
+					'label'   => __( 'WhatsApp URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'whatsapp', __( 'WhatsApp', 'simple-social-icons' ) ),
 				),
 				'xing'        => array(
 					'label'   => __( 'Xing URI', 'simple-social-icons' ),
