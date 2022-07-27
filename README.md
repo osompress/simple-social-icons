@@ -52,18 +52,19 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Instagram
 * LinkedIn
 * Medium
+* Meetup
 * Periscope
 * Phone
 * Pinterest
 * Reddit
 * RSS
 * Snapchat
-* StumbleUpon
 * TikTok
 * Tripadvisor
 * Tumblr
 * Twitter
 * Vimeo
+* WhatsApp
 * Xing
 * YouTube
 
