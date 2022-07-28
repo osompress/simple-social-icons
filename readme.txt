@@ -40,6 +40,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 
 = Which services are included? =
 
+* Amazon
 * Behance
 * Bloglovin
 * Dribbble
@@ -47,19 +48,23 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Facebook
 * Flickr
 * Github
-* Google+
+* Goodreads
 * Instagram
 * LinkedIn
 * Medium
+* Meetup
 * Periscope
 * Phone
 * Pinterest
+* Reddit
 * RSS
 * Snapchat
-* StumbleUpon
+* TikTok
+* Tripadvisor
 * Tumblr
 * Twitter
 * Vimeo
+* WhatsApp
 * Xing
 * YouTube
 
