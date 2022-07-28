@@ -16,58 +16,6 @@ commands:
           command: |
             [ ! -d "/tmp/artifacts" ] && mkdir /tmp/artifacts &>/dev/null
 
-  set_version_variable:
-    description: "Set the VERSION environment variable"
-    steps:
-      - run:
-          command: |
-            PLUGIN_VERSION=$(grep 'Version:' /tmp/src/simple-social-icons.php | awk -F: '{print $2}' | sed 's/^\s//')
-            if [ ! $PLUGIN_VERSION ]
-              then
-              echo "Didn't find a version of the plugin"
-              exit 1
-            fi
-            echo "export VERSION=$PLUGIN_VERSION" >> ${BASH_ENV}
-
-  show_pwd_info:
-    description: "Show information about the current directory"
-    steps:
-      - run: pwd
-      - run: ls -lash
-
-  svn_setup:
-    description: "Setup SVN"
-    steps:
-      - run: echo "export SLUG=$(grep '@package' /tmp/src/simple-social-icons.php | awk -F ' ' '{print $3}' | sed 's/^\s//')" >> ${BASH_ENV}
-      - run: svn co https://plugins.svn.wordpress.org/${SLUG} --depth=empty .
-      - run: svn up trunk
-      - run: svn up tags --depth=empty
-      - run: find ./trunk -not -path "./trunk" -delete
-      - run: cp -r /tmp/src/. ./trunk
-      - run: svn propset svn:ignore -F ./trunk/.svnignore ./trunk
-
-  svn_add_changes:
-    description: "Add changes to SVN"
-    steps:
-      - run:
-          command: |
-            svn stat | { grep -E '^\?' || true; } | awk '{print $2}' | xargs -r svn add
-            svn stat | { grep -E '^\!' || true; } | awk '{print $2}' | xargs -r svn rm
-            echo "Here is the svn stat about to be checked in:"
-            svn stat --verbose
-
-  svn_create_tag:
-    description: "Create a SVN tag"
-    steps:
-      - set_version_variable
-      - run: svn cp trunk tags/${VERSION}
-
-  svn_commit:
-    description: "Commit changes to SVN"
-    steps:
-      - set_version_variable
-      - run: svn ci -m "Tagging ${VERSION} from Github" --no-auth-cache --non-interactive --username "${SVN_USERNAME}" --password "${SVN_PASSWORD}"
-
 executors:
   base:
     docker:
@@ -97,27 +45,6 @@ jobs:
           at: /tmp
       - install_dependencies
       - run: composer phpcs
-
-  deploy_svn_branch:
-    executor: base
-    working_directory: /tmp/artifacts
-    steps:
-      - attach_workspace:
-          at: /tmp
-      - svn_setup
-      - svn_add_changes
-      - svn_commit
-
-  deploy_svn_tag:
-    executor: base
-    working_directory: /tmp/artifacts
-    steps:
-      - attach_workspace:
-          at: /tmp
-      - svn_setup
-      - svn_create_tag
-      - svn_add_changes
-      - svn_commit
 
 workflows:
   version: 2
@@ -149,29 +76,6 @@ workflows:
           requires:
             - approval-for-deploy-tested-up-to-bump
 
-  branch_deploy:
-    jobs:
-      - checkout:
-          filters:
-            branches:
-              only:
-                - master
-      - checks:
-          requires:
-            - checkout
-          filters:
-            branches:
-              only:
-                - master
-      - deploy_svn_branch:
-          context: genesis-svn
-          requires:
-            - checks
-          filters:
-            branches:
-              only:
-                - master
-
   tag_deploy:
     jobs:
       - checkout:
@@ -188,7 +92,7 @@ workflows:
               only: /^\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
-      - deploy_svn_tag:
+      - wp-svn/deploy:
           context: genesis-svn
           requires:
             - checks
