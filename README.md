@@ -72,6 +72,11 @@ NOTE - The rights to each pictogram in the social extension are either trademark
 
 == Changelog ==
 
+= 3.1.1 =
+* Added Amazon, Goodreads, Meetup, Reddit, TikTok, Tripadvisor, and WhatsApp icons
+* Updated GitHub icon
+* Removed Google+ and StumbleUpon icons
+
 = 3.1.0 =
 * Add escaping to output
 * Remove the svgxuse.js script
