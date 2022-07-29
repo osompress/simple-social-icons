@@ -40,6 +40,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 
 = Which services are included? =
 
+* Amazon
 * Behance
 * Bloglovin
 * Dribbble
@@ -47,25 +48,38 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Facebook
 * Flickr
 * Github
-* Google+
+* Goodreads
 * Instagram
 * LinkedIn
 * Medium
+* Meetup
 * Periscope
 * Phone
 * Pinterest
+* Reddit
 * RSS
 * Snapchat
-* StumbleUpon
+* TikTok
+* Tripadvisor
 * Tumblr
 * Twitter
 * Vimeo
+* WhatsApp
 * Xing
 * YouTube
 
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.1.1 =
+* Added Amazon, Goodreads, Meetup, Reddit, TikTok, Tripadvisor, and WhatsApp icons
+* Updated GitHub icon
+* Removed Google+ and StumbleUpon icons
+
+= 3.1.0 =
+* Add escaping to output
+* Remove the svgxuse.js script
 
 = 3.0.2 =
 * Fixed issue where icons can fail if there is a space anywhere in its URL.
