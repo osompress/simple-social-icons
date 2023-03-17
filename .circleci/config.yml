@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  wp-svn: studiopress/wp-svn@0.1
+  wp-svn: studiopress/wp-svn@dev:alpha
 
 commands:
   install_dependencies:
@@ -72,7 +72,6 @@ workflows:
             branches:
               only: /^bump-tested-up-to.*/
       - wp-svn/deploy-tested-up-to-bump:
-          context: genesis-svn
           requires:
             - approval-for-deploy-tested-up-to-bump
 
@@ -93,11 +92,6 @@ workflows:
             branches:
               ignore: /.*/
       - wp-svn/deploy:
-          context: genesis-svn
+          dry-run: true
           requires:
             - checks
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
