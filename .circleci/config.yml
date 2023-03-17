@@ -77,20 +77,10 @@ workflows:
 
   tag_deploy:
     jobs:
-      - checkout:
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
+      - checkout
       - checks:
           requires:
             - checkout
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
       - wp-svn/deploy:
           dry-run: true
           requires:
