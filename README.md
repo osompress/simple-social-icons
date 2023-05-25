@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal
+Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal, osompress, esther_sola, nahuai
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 6.0
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -71,6 +71,9 @@ This will remove icon styling options in the widget settings, and prevent Simple
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.1.2 =
+* Changed ownership from StudioPress to OsomPress. You can read more details about it in https://osompress.com/4-new-plugins-join-osompress-family/.
 
 = 3.1.1 =
 * Added Amazon, Goodreads, Meetup, Reddit, TikTok, Tripadvisor, and WhatsApp icons

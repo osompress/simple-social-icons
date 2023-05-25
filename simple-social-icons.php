@@ -3,8 +3,8 @@
  * Plugin Name: Simple Social Icons
  * Plugin URI: https://wordpress.org/plugins/simple-social-icons/
  * Description: A simple CSS and SVG driven social icons widget.
- * Author: StudioPress
- * Author URI: https://www.studiopress.com/
+ * Author: OsomPress
+ * Author URI: https://www.osompress.com/
  * Version: 3.1.1
  * Text Domain: simple-social-icons
  * Domain Path: /languages
