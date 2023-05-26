@@ -5,7 +5,7 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: OsomPress
  * Author URI: https://www.osompress.com/
- * Version: 3.1.1
+ * Version: 3.1.2
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
