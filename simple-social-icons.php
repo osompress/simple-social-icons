@@ -5,7 +5,7 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: OsomPress
  * Author URI: https://www.osompress.com/
- * Version: 3.1.2
+ * Version: 3.2
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
@@ -110,6 +110,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'goodreads'              => '',
 				'instagram'              => '',
 				'linkedin'               => '',
+				'mastodon'               => '',
 				'medium'                 => '',
 				'meetup'                 => '',
 				'periscope'              => '',
@@ -118,10 +119,11 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'reddit'                 => '',
 				'rss'                    => '',
 				'snapchat'               => '',
+				'threads'                => '',
 				'tiktok'                 => '',
 				'tripadvisor'            => '',
 				'tumblr'                 => '',
-				'twitter'                => '',
+				'twitter'             	 => '',
 				'vimeo'                  => '',
 				'whatsapp'               => '',
 				'xing'                   => '',
@@ -183,6 +185,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'Linkedin URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'linkedin', __( 'LinkedIn', 'simple-social-icons' ) ),
 				),
+				'mastodon'    => array(
+					'label'   => __( 'Mastodon URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'mastodon', __( 'Mastodon', 'simple-social-icons' ) ),
+				),
 				'medium'      => array(
 					'label'   => __( 'Medium URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'medium', __( 'Medium', 'simple-social-icons' ) ),
@@ -215,6 +221,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'snapchat', __( 'Snapchat', 'simple-social-icons' ) ),
 				),
+				'threads'    => array(
+					'label'   => __( 'Threads URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'threads', __( 'Threads', 'simple-social-icons' ) ),
+				),
 				'tiktok'      => array(
 					'label'   => __( 'TikTok URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'tiktok', __( 'TikTok', 'simple-social-icons' ) ),
@@ -228,7 +238,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 					'pattern' => $this->get_icon_markup( 'tumblr', __( 'Tumblr', 'simple-social-icons' ) ),
 				),
 				'twitter'     => array(
-					'label'   => __( 'Twitter URI', 'simple-social-icons' ),
+					'label'   => __( 'X URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'twitter', __( 'Twitter', 'simple-social-icons' ) ),
 				),
 				'vimeo'       => array(
