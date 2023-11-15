@@ -3,7 +3,7 @@ Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, sha
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 6.4
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -45,6 +45,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Bloglovin
 * Dribbble
 * Email
+* Etsy
 * Facebook
 * Flickr
 * Github
@@ -60,6 +61,8 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Reddit
 * RSS
 * Snapchat
+* Substack
+* Telegram
 * Threads
 * TikTok
 * Tripadvisor
@@ -73,6 +76,9 @@ This will remove icon styling options in the widget settings, and prevent Simple
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.2.2 =
+* Added Etsy, Substack and Telegram icons
 
 = 3.2.1 =
 * Fixed issue with new icons

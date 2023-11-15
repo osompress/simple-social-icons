@@ -5,7 +5,7 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: OsomPress
  * Author URI: https://www.osompress.com/
- * Version: 3.2.1
+ * Version: 3.2.2
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
@@ -104,6 +104,7 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'bloglovin'              => '',
 				'dribbble'               => '',
 				'email'                  => '',
+				'etsy'                  => '',
 				'facebook'               => '',
 				'flickr'                 => '',
 				'github'                 => '',
@@ -119,6 +120,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'reddit'                 => '',
 				'rss'                    => '',
 				'snapchat'               => '',
+				'substack'               => '',
+				'telegram'               => '',
 				'threads'                => '',
 				'tiktok'                 => '',
 				'tripadvisor'            => '',
@@ -160,6 +163,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'email'       => array(
 					'label'   => __( 'Email URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'email', __( 'Email', 'simple-social-icons' ) ),
+				),
+				'etsy'       => array(
+					'label'   => __( 'Etsy URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'etsy', __( 'Etsy', 'simple-social-icons' ) ),
 				),
 				'facebook'    => array(
 					'label'   => __( 'Facebook URI', 'simple-social-icons' ),
@@ -220,6 +227,14 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'snapchat'    => array(
 					'label'   => __( 'Snapchat URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'snapchat', __( 'Snapchat', 'simple-social-icons' ) ),
+				),
+				'substack'       => array(
+					'label'   => __( 'Substack URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'substack', __( 'Substack', 'simple-social-icons' ) ),
+				),
+				'telegram'       => array(
+					'label'   => __( 'Telegram URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'telegram', __( 'Telegram', 'simple-social-icons' ) ),
 				),
 				'threads'    => array(
 					'label'   => __( 'Threads URI', 'simple-social-icons' ),
