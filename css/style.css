@@ -62,3 +62,9 @@
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+
+svg.social-bluesky {
+    font-size: 18px;
+    margin-left: -0.1em;
+    margin-top: -0.1em;
+}
