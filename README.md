@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Simple Social Icons ===
 Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal, osompress, esther_sola, nahuai
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
