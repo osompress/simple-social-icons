@@ -551,8 +551,9 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 		 * @param string $cssfile The full path to the stylesheet.
 		 */
 		$cssfile = apply_filters( 'simple_social_default_stylesheet', plugin_dir_url( __FILE__ ) . 'css/style.css' );
-
-		wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
+		if ( is_active_widget( false, false, $this->id_base, true ) ) {
+			wp_enqueue_style( 'simple-social-icons-font', esc_url( $cssfile ), array(), $this->version, 'all' );
+		};
 	}
 
 	/**
