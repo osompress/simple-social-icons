@@ -5,7 +5,7 @@
  * Description: A simple CSS and SVG driven social icons widget.
  * Author: OsomPress
  * Author URI: https://www.osompress.com/
- * Version: 3.2.4
+ * Version: 3.2.5
  * Text Domain: simple-social-icons
  * Domain Path: /languages
  *
@@ -102,7 +102,8 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'amazon'                 => '',
 				'behance'                => '',
 				'bloglovin'              => '',
-				'bluesky'              => '',
+				'bluesky'             	 => '',
+				'diaspora'             	 => '',
 				'dribbble'               => '',
 				'email'                  => '',
 				'etsy'                  => '',
@@ -160,6 +161,10 @@ class Simple_Social_Icons_Widget extends WP_Widget {
 				'bluesky'   => array(
 					'label'   => __( 'Bluesky URI', 'simple-social-icons' ),
 					'pattern' => $this->get_icon_markup( 'bluesky', __( 'Bluesky', 'simple-social-icons' ) ),
+				),
+				'diaspora'    => array(
+					'label'   => __( 'Diaspora URI', 'simple-social-icons' ),
+					'pattern' => $this->get_icon_markup( 'diaspora', __( 'Diaspora', 'simple-social-icons' ) ),
 				),
 				'dribbble'    => array(
 					'label'   => __( 'Dribbble URI', 'simple-social-icons' ),

@@ -3,7 +3,7 @@ Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, sha
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
 Tested up to: 6.5
-Stable tag: 3.2.4
+Stable tag: 3.2.5
 
 This plugin allows you to insert social icons in any widget area.
 
@@ -44,6 +44,7 @@ This will remove icon styling options in the widget settings, and prevent Simple
 * Behance
 * Bloglovin
 * Bluesky
+* Diaspora
 * Dribbble
 * Email
 * Etsy
@@ -77,6 +78,9 @@ This will remove icon styling options in the widget settings, and prevent Simple
 NOTE - The rights to each pictogram in the social extension are either trademarked or copyrighted by the respective company.
 
 == Changelog ==
+
+= 3.2.5 =
+* Added Diaspora icon
 
 = 3.2.3 =
 * Added Bluesky icon
