@@ -2,7 +2,7 @@
 Contributors: studiopress, nathanrice, bgardner, dreamwhisper, laurenmancke, shannonsans, modernnerd, marksabbath, damiencarbery, helgatheviking, littlerchicken, tiagohillebrandt, wpmuguru, michaelbeil, norcross, rafaltomal, osompress, esther_sola, nahuai
 Tags: social media, social networking, social profiles
 Requires at least: 4.0
-Tested up to: 6.5
+Tested up to: 6.6
 Stable tag: 3.2.5
 
 This plugin allows you to insert social icons in any widget area.
