@@ -1,0 +1,310 @@
+/**
+ * Brand colors for Simple Social Icons block variations
+ * Only for icons not in WordPress core
+ */
+
+/* IMDB */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-imdb {
+    background-color: #F5C518;
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-imdb {
+	background-color: #F5C518;
+	color: #000000;
+}
+
+/* Ko-fi */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-kofi {
+	color: #72A5F2;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-kofi {
+	background-color: #72A5F2;
+	color: #ffffff;
+}
+
+/* Letterboxd */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-letterboxd {
+	color: #202830;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-letterboxd {
+	background-color: #3B45FD;
+	color:#fff;
+}
+
+/* Signal */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-signal {
+	color: #3B45FD;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-signal {
+	background-color: #3B45FD;
+	color:#fff;
+}
+
+/* YouTube Music */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-youtube-music {
+	color: #FF0000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-youtube-music {
+	background-color: #FF0000;
+	color:#fff;
+}
+
+/* Diaspora */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-diaspora {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-diaspora {
+	background-color: #3E4142;
+	color: #ffffff;
+}
+
+/* Bloglovin */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-bloglovin {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-bloglovin {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Phone */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-phone {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-phone {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Substack */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-substack {
+	color: #FF6719;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-substack {
+	background-color: #FF6719;
+	color: #ffffff;
+}
+
+/* Tripadvisor */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-tripadvisor {
+	color: #34E0A1;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-tripadvisor {
+	background-color: #34E0A1;
+	color: #ffffff;
+}
+
+/* Xing */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-xing {
+	color: #026466;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-xing {
+	background-color: #026466;
+	color: #ffffff;
+}
+
+/* Pixelfed */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-pixelfed {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-pixelfed {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Matrix */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-matrix {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-matrix {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* ProtonMail */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-protonmail {
+	color: #6D4AFF;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-protonmail {
+	background-color: #6D4AFF;
+	color: #ffffff;
+}
+
+/* PayPal */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-paypal {
+	color: #003087;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-paypal {
+	background-color: #003087;
+	color: #ffffff;
+}
+
+/* AntennaPod */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-antennapod {
+	color: #20a5ff;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-antennapod {
+	background-color: #20a5ff;
+	color: #ffffff;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-caldotcom {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Fedora */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-fedora {
+	color: #294172;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-fedora {
+	background-color: #294172;
+	color: #ffffff;
+}
+
+/* Google Photos */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-googlephotos {
+	color: #4285F4;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-googlephotos {
+	background-color: #4285F4;
+	color: #ffffff;
+}
+
+/* Google Scholar */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-googlescholar {
+	color: #4285F4;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-googlescholar {
+	background-color: #4285F4;
+	color: #ffffff;
+}
+
+/* Mendeley */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-mendeley {
+	color: #9D1626;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-mendeley {
+	background-color: #9D1626;
+	color: #ffffff;
+}
+
+/* Notion */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-notion {
+	color: #000000;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-notion {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Overcast */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-overcast {
+	color: #FC7E0F;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-overcast {
+	background-color: #FC7E0F;
+	color: #ffffff;
+}
+
+/* Pexels */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-pexels {
+	color: #05A081;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-pexels {
+	background-color: #05A081;
+	color: #ffffff;
+}
+
+/* Pocket Casts */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-pocketcasts {
+	color: #F43E37;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-pocketcasts {
+	background-color: #F43E37;
+	color: #ffffff;
+}
+
+/* Strava */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-strava {
+	color: #FC4C02;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-strava {
+	background-color: #FC4C02;
+	color: #ffffff;
+}
+
+/* WeChat */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-wechat {
+	color: #09B83E;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-wechat {
+	background-color: #09B83E;
+	color: #ffffff;
+}
+
+/* Zulip */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-zulip {
+	color: #54a7ff;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-zulip {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Podcast Addict */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-podcastaddict {
+	color: #f3842c;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-podcastaddict {
+	background-color: #f3842c;
+	color: #ffffff;
+}
+
+/* Apple Podcasts */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-applepodcasts {
+	color: #8e32c6;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-applepodcasts {
+	background-color: #8e32c6;
+	color: #ffffff;
+}
+
+/* iVoox */
+:where(.wp-block-social-links.is-style-logos-only) .wp-social-link-ivoox {
+	color: #F45F31;
+}
+
+:where(.wp-block-social-links:not(.is-style-logos-only)) .wp-social-link-ivoox {
+	background-color: #F45F31;
+	color: #ffffff;
+}

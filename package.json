@@ -1,0 +1,13 @@
+{
+	"name": "simple-social-icons",
+	"version": "3.2.4",
+	"description": "A simple CSS and SVG driven social icons widget with block variations support.",
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27.0.0"
+	}
+}
+
