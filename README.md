@@ -16,9 +16,9 @@ Simple Social Icons is an easy to use, customizable way to display icons that li
 
 1. **Widget (WordPress 4.0+):** The traditional widget works on all supported WordPress versions. Simply drag the "Simple Social Icons" widget into any widget area and configure it from the widget form. All available icons are accessible through the widget.
 
-2. **Block Variations (WordPress 6.9+):** On WordPress 6.9+, this plugin extends the core Social Icons block with additional icon variations. These icons automatically appear when adding a Social Icons block in the block editor. Block variations only add icons that are not already available in WordPress core, so you get the best of both worlds: core icons plus these additional options.
+2. **Block Variations (WordPress 6.9+):** On WordPress 6.9 and above, this plugin enhances the native Social Icons block by adding a set of additional icon variations. These new icons appear automatically when you insert a Social Icons block in the editor, integrating seamlessly with the core experience. Block variations include only icons that are not already provided by WordPress core, ensuring the best of both worlds: you keep all default icons while gaining extra options without duplication.
 
-**Important:** If you're currently using the widget, nothing changes for you. The widget continues to work exactly as before on all WordPress versions. Block variations are an additional feature that only activates on WordPress 6.9+ and doesn't affect existing widget functionality.
+**Important:** If you are currently using the classic widget, nothing changes for you. The widget continues to function exactly as before across all WordPress versions. Block variations are an optional enhancement that activates only on WordPress 6.9+ and does not affect existing widget functionality in any way.
 
 > **Note:** The `simple_social_default_glyphs` filter has been deprecated from this plugin.
 
@@ -34,33 +34,33 @@ Simple Social Icons is an easy to use, customizable way to display icons that li
 
 ### Using Block Variations (WordPress 6.9+)
 
-1. In the block editor, add a Social Icons block
-2. Click the block and select from the available icon variations in the block settings
-3. The plugin automatically adds additional icon options beyond what WordPress core provides
+1. Add a Social Icons block in the block editor.
+2. Select the block, then choose from the available icon variations in the block settings panel.
+3. The plugin automatically provides additional icon options beyond those included in WordPress core.
 
 ## Frequently Asked Questions
 
 ### What's the difference between the widget and block variations?
 
-The widget is the traditional way to add social icons and works on all WordPress versions (4.0+). It provides access to all available icons through a widget interface.
+The widget is the traditional method for adding social icons and is compatible with all WordPress versions (4.0+). It provides access to the full set of icons through a widget-based interface.
 
-Block variations are a newer feature that extends the core Social Icons block (WordPress 6.9+). They only add icons that aren't already in WordPress core, so you get both core icons and additional options. Block variations are automatically available when you add a Social Icons block in the block editor.
+Block variations are a newer feature that enhances the core Social Icons block (WordPress 6.9+). They add only the icons not already included in WordPress core, giving you the complete set: all core icons plus the additional options provided by this plugin. These variations appear automatically whenever you insert a Social Icons block in the block editor.
 
-Both methods work independently - you can use either one, or both, depending on your needs.
+Both methods work independently — you can use either one, or both, depending on your site’s needs.
 
 ### Will updating break my existing widget setup?
 
-No. The widget functionality remains completely unchanged. If you're using the widget, updating to version 4.0.0 will not affect your existing setup in any way. Block variations are an additional feature that only activates on WordPress 6.9+ and don't interfere with widget functionality.
+No. The widget functionality remains entirely unchanged. If you're using the widget, updating to version 4.0.0 will not affect your existing setup in any way. Block variations are an additional feature that activates only on WordPress 6.9+ and do not interfere with widget behavior.
 
 ### Which icons are available in widgets vs blocks?
 
-**Widget:** All icons are available, including those that are also in WordPress core (like Facebook, Twitter/X, Instagram, etc.) plus all additional icons provided by this plugin.
+**Widget:** All icons are available, including those already included in WordPress core (such as Facebook, Twitter/X, Instagram, etc.), plus all additional icons provided by this plugin.
 
-**Block Variations:** Only icons that are NOT in WordPress core are added as variations. This means you get WordPress core icons (Facebook, Twitter/X, Instagram, LinkedIn, YouTube, etc.) plus the additional icons from this plugin (AntennaPod, Bloglovin, Diaspora, IMDB, Ko-fi, Phone, PayPal, and many more). This gives you the complete set of icons when using blocks.
+**Block Variations:** Only icons NOT included in WordPress core are added as variations. This means you retain all core icons (Facebook, Twitter/X, Instagram, LinkedIn, YouTube, etc.) and gain the extra icons from this plugin (AntennaPod, Bloglovin, Diaspora, IMDB, Ko-fi, Phone, PayPal, and many more). This results in full icon coverage when using the block editor.
 
 ### Can I use both widgets and blocks?
 
-Yes! You can use both methods simultaneously. For example, you might use the widget in a sidebar while using block variations in your page content. They work independently and don't conflict with each other.
+Yes. You can use both methods simultaneously. For example, you might place the widget in a sidebar while using block variations within your page or post content. They operate independently and do not conflict with each other.
 
 ### Can I reorder the icons?
 
