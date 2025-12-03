@@ -685,7 +685,7 @@ function ssiw_load_widget() {
  */
 function simple_social_icons_supports_block_variations() {
 	global $wp_version;
-	return version_compare( $wp_version, '6.8', '>=' );
+	return version_compare( $wp_version, '6.9', '>=' );
 }
 
 /**
