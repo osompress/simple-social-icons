@@ -43,21 +43,21 @@ The widget is the traditional way to add social icons and works on all WordPress
 
 Block variations are a newer feature that extends the core Social Icons block (WordPress 6.9+). They only add icons that aren't already in WordPress core, so you get both core icons and additional options. Block variations are automatically available when you add a Social Icons block in the block editor.
 
-Both methods work independently - you can use either one, or both, depending on your needs.
+Both methods work independently — you can use either one, or both, depending on your site's needs.
 
 = Will updating break my existing widget setup? =
 
-No. The widget functionality remains completely unchanged. If you're using the widget, updating to version 4.0.0 will not affect your existing setup in any way. Block variations are an additional feature that only activates on WordPress 6.9+ and don't interfere with widget functionality.
+No. The widget functionality remains entirely unchanged. If you're using the widget, updating to version 4.0.0 will not affect your existing setup in any way. Block variations are an additional feature that activates only on WordPress 6.9+ and do not interfere with widget behavior.
 
 = Which icons are available in widgets vs blocks? =
 
-**Widget:** All icons are available, including those that are also in WordPress core (like Facebook, Twitter/X, Instagram, etc.) plus all additional icons provided by this plugin.
+**Widget:** All icons are available, including those already included in WordPress core (such as Facebook, Twitter/X, Instagram, etc.), plus all additional icons provided by this plugin.
 
-**Block Variations:** Only icons that are NOT in WordPress core are added as variations. This means you get WordPress core icons (Facebook, Twitter/X, Instagram, LinkedIn, YouTube, etc.) plus the additional icons from this plugin (AntennaPod, Bloglovin, Diaspora, IMDB, Ko-fi, Phone, PayPal, and many more). This gives you the complete set of icons when using blocks.
+**Block Variations:** Only icons NOT included in WordPress core are added as variations. This means you retain all core icons (Facebook, Twitter/X, Instagram, LinkedIn, YouTube, etc.) and gain the extra icons from this plugin (AntennaPod, Bloglovin, Diaspora, IMDB, Ko-fi, Phone, PayPal, and many more). This results in full icon coverage when using the block editor.
 
 = Can I use both widgets and blocks? =
 
-Yes! You can use both methods simultaneously. For example, you might use the widget in a sidebar while using block variations in your page content. They work independently and don't conflict with each other.
+Yes. You can use both methods simultaneously. For example, you might place the widget in a sidebar while using block variations within your page or post content. They operate independently and do not conflict with each other.
 
 = Can I reorder the icons? =
 
